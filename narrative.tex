@@ -11,9 +11,9 @@
 \renewcommand{\ttdefault}{cmtt}
 
 \usepackage{amsmath}
-\usepackage{graphicx} 
-\usepackage{tikz} 
-\usepackage{float} 
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
 \usepackage{xspace}
 \usepackage{mathrsfs}
 \usepackage[mathcal]{euscript}
@@ -54,13 +54,13 @@
 \pagenumbering{gobble}
 
 \begin{center}
-{-----  COVER PAGE  ----- \vspace{-5pt}\\ Project Narrative} 
+{-----  COVER PAGE  ----- \vspace{-5pt}\\ Project Narrative}
 
 {\textit{Application for Funding Opportunity \#DE-FOA-0001414 \\ U.S. Department of Energy}
 }\vspace{-20pt}
 
 \setlength{\unitlength}{1in}
-\begin{picture}(6,.1) 
+\begin{picture}(6,.1)
 \put(0,0) {\line(1,0){6.25}}
 \end{picture}
 \vspace{10pt}
@@ -73,14 +73,14 @@ TRANSPORT THEORY WITH MULTISCALE PATH DISTRIBUTIONS IN REAL-WORLD APPLICATIONS}
 \begin{itemize}[noitemsep,topsep=0pt,parsep=-2pt,partopsep=20pt,labelwidth=7.5cm,align=left,
 itemindent=7.5cm]
 \item[$\bullet$\, Applicant:] 					{\bf ??????????}
-\item[\quad Street Address:] 					{\bf ??????????}  
+\item[\quad Street Address:] 					{\bf ??????????}
 \item[\quad City:] 									{\bf Berkeley}
 \item[\quad State:] 								{\bf California}
 \item[\quad Zip:] 									{\bf ??????????}\vspace{12pt}
-\item[$\bullet$\, Postal Address:] 			{\bf ??????????} 
+\item[$\bullet$\, Postal Address:] 			{\bf ??????????}
 \item[\quad (line 2)] 								{\bf ??????????}
 \item[\quad (line 3)] 								{\bf ??????????}\vspace{12pt}
-\item[$\bullet$\, Lead PI name:] 			{\bf Rachel N. Slaybaugh} 
+\item[$\bullet$\, Lead PI name:] 			{\bf Rachel N. Slaybaugh}
 \item[\quad Telephone Number:]			{\bf 570-850-3385}
 \item[\quad Email:]									{\bf slaybaugh@berkeley.edu}\vspace{12pt}
 \item[$\bullet$\, Administrative Point of Contact Name:] {\bf ??????????}
@@ -112,8 +112,8 @@ TRANSPORT THEORY WITH MULTISCALE PATH DISTRIBUTIONS IN REAL-WORLD APPLICATIONS}
 \end{center}\vspace{-20pt}
 
 \setlength{\unitlength}{1in}
-\begin{picture}(6,.1) 
-\put(0,0) {\line(1,0){6.25}}         
+\begin{picture}(6,.1)
+\put(0,0) {\line(1,0){6.25}}
 \end{picture}
 
 
@@ -126,41 +126,44 @@ The main impact of this work will be on improving the modeling of transport proc
 We will develop a methodology that will allow us to accurately solve coupled multiscale transport problems in highly heterogeneous systems.
 We will also develop an approach to quantify uncertainty with respect to the particular homogenization of the medium.
 
-Accurately modeling transport processes in optical media is integral to several real-world applications that are in line with the goals of the Department of Energy (DOE) and the Advanced Scientific Computing Research (ASCR) program.
+Accurate modeling transport processes in optical media is integral to several real-world applications that are in line with the goals of the Department of Energy (DOE) and the Advanced Scientific Computing Research (ASCR) program.
 These include radiative transfer in the Earth's cloudy atmosphere (see \cite{davxu14,xudav16}, and references therein), neutron transport in certain types of nuclear reactors (see \cite{fragre11,vaslar14b}, and references therein), and computational graphics (CG) rendering (see \cite{yueiwa10,deon14}, and references therein).
 Due to the complexity of these systems, spatial variations are often represented with stochastic models.
 
 There are many ways to address stochastic spatial variability in a transport medium; a widely-used and natural approach is \textit{homogenization} \cite{dumgol00,cailac00}.
 In this approach, the solution of the transport problem in the heterogeneous stochastic medium is accurately predicted by solving a transport problem in an uniform medium.
 Current approaches to homogenize and model particle transport in these applications fail to properly capture important physical aspects of the system \cite{larvas11,davxu14,xudav16,vaslar14b,vas13}.
+****BE CAREFUL HERE THE ABOVE PAPERS DESCRIBE THE SOLUTIONS, INCLUDING OURS, NOT THE PROBLEMS, WICH IS WHAT YOU EXPECT AT THE END OF THIS SENTENCE!****
 
-In this project, we will focus in particular on addressing the challenges involved in modeling transport processes in atmospheric clouds.
-The ability to do that accurately in the cloudy atmosphere is crucial to climate modeling research. 
+In this project, we will focus in particular on ****SOMETHING COMPELLING HERE ON PBRs (including acroynm definition) AND WHY THEY ARE A PROMISSING DEVELOPMENT IN NE (safety?)****
+
+We will also address the challenges involved in modeling the transport of solar and thermal radiation in atmospheric clouds.
+The ability to do that accurately in the cloudy atmosphere is crucial to climate modeling research.
 This has been pointed out in a recent report\cite{ipcc13} by the Intergovernmental Panel on Climate Change (IPCC), which states (p. 53) that
 \begin{quote}
 \textit{``The uncertainty in the WMGHG RF\footnote{Well-mixed greenhouse gas radiative forcing} is due in part to its radiative properties but mostly to the full accounting of atmospheric radiative transfer including clouds''.}
 \end{quote}
 
 Moreover, this has been identified by the Exascale Mathematics Working Group as a key area of interest for ASCR research \cite{amrec14}.
-On the subject of developing new mathematical tools to address climate models, their report says that (p. 6)   
+On the subject of developing new mathematical tools to address climate models, their report says that (p. 6)
 \begin{quote}
 \textit{``... models based on a Markovian assumption will not be adequate.
 Models that can represent the physics across a range of scales are likely to be stochastic and include memory effects''}.
-\end{quote} 
-This is exactly what our proposed work does: it includes a memory variable (the free-path of the particle) to preserve important physical aspects of the stochastic system. 
+\end{quote}
+This is exactly what our proposed work does: it includes a memory variable (the free-path of the particle) to preserve important physical aspects of the stochastic system.
 
-In addition, we will establish an interdisciplinary collaboration in the field of computer graphics.
+In addition, we will establish a cross-disciplinary collaboration in the field of computer graphics.
 Incorporating non-classical free-paths in volume-rendering algorithms will produce more realistic images, as deep penetration of photons is a key feature of high albedo media.
 Since this is what happens in atmospheric clouds, we will study the impact of the proposed model in CG rendering.
 We will make use of the synergy between these two applications to develop novel approaches, which will provide many insights to both communities.
 
 Finally, we point out that the work we propose will open new research avenues in vital areas of interest for the Applied Mathematics topic area of the ASCR program.
-These include, but are not limited to, the implementation of novel computational methods for solving the differential and integro-differential equations involved; studies in uncertainty quantification; innovations in computing large systems of linear equations; and the development of coupled multiscale models.
+These include, but are not limited to, the implementation of novel computational methods for solving the differential, intergal, and integro-differential equations involved; studies in uncertainty quantification; innovations in computing large systems of linear equations; and the development of coupled multiscale models.
 In short, this work supports the Applied Mathematics goal to solve problems of interest with greater accuracy by more accurately capturing the physics.
 
 In the following sections we will describe the work we will undertake, why it will contribute to advancing the knowledge and understanding of transport problems in stochastic media, and how we will complete the objectives of the proposal.
 We start with a discussion on the classical approach used by current tools and why it is insufficient to accurately model non-classical particle transport in relevant applications.
-This will be followed by a description of the non-classical theory and a discussion of 
+This will be followed by a description of the non-classical theory and a discussion of
 how it will improve our ability to accurately model these problems.
 Finally, a detailed research plan describing project execution, milestones, deliverables, and responsibilities is described.
 
@@ -169,7 +172,7 @@ Finally, a detailed research plan describing project execution, milestones, deli
 \section{The Challenge}
 
 We define the free-path $s$ as the distance traveled by a particle (neutron or photon) since its previous interaction (birth or scattering event).
-In this definition, the instant after a particle is born or scatters, its value of $s$ is 0. 
+In this definition, the instant after a particle is born or scatters, its value of $s$ is 0.
 In the classical theory of linear particle transport, the incremental probability $dp$ that a particle at point $\rvec = (x,y,z)$ with energy $E$ will experience an interaction while traveling an incremental distance $ds$ is given by $\Sigma_t(\rvec,E)ds$.
 Here, the total cross section $\Sigma_t$ is independent of the free-path $s$ and of the direction of flight $\omvec = (\Omega_x,\Omega_y,\Omega_z)$, where $|\omvec|=1$.
 
@@ -187,6 +190,8 @@ Particles that enter such a volume will undergo many collisions before exiting f
 \begin{align}\label{eq1}
 p(s) = \Sigma_t e^{-\Sigma_t s}.
 \end{align}
+Note that the scattering centers in this system can be viewed as water droplets in an idealized homogeneous cloud where the transported particles are (e.g., solar) photons.
+
 Now consider a much larger system formed by randomly placing many of these volumes in a backround ``void'', as sketched in \cref{fig2}.
 \begin{figure}[hbt]
     \centering
@@ -197,20 +202,19 @@ Now consider a much larger system formed by randomly placing many of these volum
     \caption{Heterogeneous random system formed by many volumes suspended in a void.}
     \label{fig2}
 \end{figure}
-Notice that the volume regions in this system can be interpreted as water droplets in a cloud, with each point within a water droplet being a potential scattering center.
-This type of clumpy medium is also present in Pebble Bed Reactors (PBRs) \cite{fragre11,vaslar14b}, where the volume regions represent the fuel pebbles in the reactor core, with thousands of them piled on top of one another in a random manner.
+This type of clumpy medium is present in Pebble Bed Reactors (PBRs) \cite{fragre11,vaslar14b}, where the volume regions represent the fuel pebbles in the reactor core, with thousands of them piled on top of one another in a random manner.  Real clouds in planetary atmospheres, starting with the Earth's, are constantly churned by turbulent motion, and this generates strong spatial heterogeneity in their local microphysical and hence optical properties.
 
 It is common to use a homogenization model to address transport problems in this kind of random system.
 This type of approach seeks to develop effective material properties that can be used in the solution of a transport problem for a uniform medium, while achieving an accurate prediction of the flux behavior in the heterogeneous stochastic medium.
-Nevertheless, standard homogenization techniques inherently assume that \cref{eq1} holds in the homogenized material; that is, they assume that the free-path distribution in the uniform medium is given by an exponential (classical transport).  
+Nevertheless, standard homogenization techniques inherently assume that \cref{eq1} holds in the homogenized material; that is, they assume that the free-path distribution in the uniform medium is given by an exponential (classical transport).
 
 However, the assumption that $\Sigma_t$ is independent of $s$ is not valid when the locations of the volume regions in the system are correlated.
 This correlation leads to a \textit{non-exponential} free-path distribution $p(s)$; we refer this type of transport processes \textit{non-classical}.
 The classical homogenization approaches used to address these problems are not capable of preserving the true non-exponential attenuation law that arises in these heterogeneous systems \cite{larvas11,davxu14,vaslar14b,xudav16,vas13}.
-This leads to unreliable estimates of the particle flux in these applications, due to important physical quantities being poorly approximated. 
+This leads to unreliable estimates of the particle flux in these applications, due to important physical quantities being poorly approximated.
 
 The challenge is to develop and implement a methodology that (i) determines the true free-path distribution in these systems, and (ii) uses that information in a model that preserves the physics of these stochastic processes.
-To do that, we will use a novel theory specifically developed to address non-classical transport.   
+To do that, we will use a novel theory specifically developed to address non-classical transport.
 
 %----------------------------------------------------------------------
 %----------------------------------------------------------------------
@@ -236,7 +240,7 @@ a distance $s$ since its previous}\\
 traveling a further distance $ds$,}
 \end{array}
 \end{align*}
-and we can obtain the classical angular flux $\Psi(\rvec,\omvec)$ by computing
+and we can obtain the angular flux $\Psi(\rvec,\omvec)$ by computing
 \begin{align}
 \Psi(\rvec,\omvec) = \int_0^\infty \psi(\rvec,\omvec,s)ds.
 \end{align}
@@ -244,14 +248,14 @@ The generalized model described by \cref{eq2} effectively homogenizes the hetero
 \begin{align}\label{eq4}
 p(s) = \Sigma_t(s)\exp\left[-\int_0^s\Sigma_t(s')ds'\right].
 \end{align}
-Notice that, if $\Sigma_t(s)=\Sigma_t$ is independent of $s$, \cref{eq4} reduces to \cref{eq1}, and \cref{eq2} reduces to the classical transport equation
+Notice that, if $\Sigma_t(s)\equiv\Sigma_t$, independent of $s$, then \cref{eq4} reduces to \cref{eq1}, and \cref{eq2} reduces to the classical transport equation
 \begin{align}\label{eq5}
 \omvec\cdot\nabla\Psi(\rvec,\omvec) + \Sigma_t\Psi(\rvec,\omvec)
 = \frac{1}{4\pi}\left[c\int_{4\pi} \Sigma_t\Psi(\rvec,\omvec')d\Omega' + Q(\rvec)\right].\nonumber
 \end{align}
 Existence and uniqueness of solutions have been rigorously discussed in \cite{fragou10}.
 The non-classical theory was extended in \cite{vaslar14a} to include angular-dependent free-path distributions in order to investigate anisotropic diffusion of neutrons in 3D PBR cores.
-A similar kinetic equation with free-path as an independent variable has been rigorously derived for the periodic Lorentz gas in a series of papers by Golse and colleagues (cf. \cite{gol12} for a review), and by Marklof \& Str\"ombergsson (cf. \cite{marstr11,marstr15}). 
+A similar kinetic equation with free-path as an independent variable has been rigorously derived for the periodic Lorentz gas in a series of papers by Golse and colleagues (cf. \cite{gol12} for a review), and by Marklof \& Str\"ombergsson (cf. \cite{marstr11,marstr15}).
 
 %----------------------------------------------------------------------
 %----------------------------------------------------------------------
@@ -259,17 +263,24 @@ A similar kinetic equation with free-path as an independent variable has been ri
 
 We have already shown that the classical linear Boltzmann equation and diffusion-based approximations are particular cases of the non-classical equation \cite{frakry15,vas16}.
 Moreover, one can combine moment methods and the Fourier transform to derive fractional diffusion equations from the non-classical transport equation \cite{frasun16}.
-This is key to model radiative transfer problems in atmospheric clouds, where generalized (anomalous) diffusion arises due to long-tailed free-path distributions. 
+This is key to model radiative transfer problems in atmospheric clouds, where generalized (a.k.a. anomalous) diffusion arises due to long-tailed free-path distributions.
+****NEED REFERENCES FOR THIS STATEMENT****
+PLEASE USE Davis and Marshak (1997) and Scholl et al. (2006) IN MY 2-PAGE CV***
 
-With respect to Pebble Bed Reactors, non-classical methods have been shown to outperform current homogenization techniques in diffusive systems \cite{larvas11,vaslar14b,vas13} and in certain types of one-dimensional (1D) transport problems \cite{vaskry16}.   
-Moreover, ****INTERESTING RADIATIVE TRANSFER RESULT (FIGURE / TABLE)***
+With respect to Pebble Bed Reactors, non-classical methods have been shown to outperform current homogenization techniques in diffusive systems \cite{larvas11,vaslar14b,vas13} and in certain types of one-dimensional (1D) transport problems \cite{vaskry16}.
+****NEEDS SOME ELABORATION, PREFERABLY WITH A FIGURE****
+
+With respect to atmospheric clouds, co-I Davis and co-workers have used the explicit parameterization $p_a(s) = \langle\Sigma_t\rangle/\left(1+\langle\Sigma_t\rangle s/a\right)^{1+a}$, where $\langle\Sigma_t\rangle$ is the average cross-section and $a$ is the spatial variability parameter.  It ranges from unity (excluded) to infinity (included).  In the later limit, the classic exponential law in \cref{eq1} is recovered.  In the former one, the mean-free-path diverges and this is not seen in the observations $[Scholl_ref]$.  This choice of $p(s)$ defines the generalized radiative transfer (GRT) model [2refs] (previously called ``anomalous'' or ``L\'evy'' transport [DavisMarshak97]).  Figure~****a shows a series of GRT particle random walks in a medium with a common $\langle\Sigma_t\rangle$ but $a$ decreasing from $\infty$ to 1.2.  We notice the similarity of the clusters of small steps that would occur in localized opaque regions, i.e., isolated clouds, and the increasingly large jumps between these clusters/clouds as the tail of the selected $p(s)$ distributions in Fig.~****b becomes longer.
+
 \begin{center}
 *****PLACEHOLDER FOR EXAMPLE OF RADITIVE TRANSFER RESULTS*****
-\end{center} 
-These preliminary numerical results offer a strong case for the non-classical theory, and justify the efforts to develop and improve related tools.
+Insert and format two panels in emailed PDFs.  Caption with
+{Figure 3: (a) 2D unbounded random walks, 100 steps each, all starting in the same direction at the origin of the axes, by isotropically scattered particles following $p_a(s)$ with the choices of $a$ called out in the text.  (b) Log plots of $p(s)$ for the traces plotted in panel (a).}
+\end{center}
 
+These preliminary numerical results offer a strong case for the non-classical theory, and justify the efforts to develop and improve related tools.
 However, results for transport problems in higher dimensions have not yet been performed. The reason is that, in order to solve the non-classical transport equation, one must know the true (ensemble-averaged) free-path distribution function of the system.
-Although there are a few particular cases in which an analytical expression for $p(s)$ can be obtained \cite{vaskry16,vassla16}, doing so for general 3D random systems is still far from being achieved.   
+Although there are a few particular cases in which an analytical expression for $p(s)$ can be obtained \cite{vaskry16,vassla16}, doing so for general 3D random systems is still far from being achieved.
 
 %----------------------------------------------------------------------
 %----------------------------------------------------------------------
@@ -295,7 +306,7 @@ The expectation is that the non-classical approach will be less costly and more 
 
 We identify \textit{five} key tasks that need to be completed in order to successfully accomplish the proposed work: numerically determining $p(s)$; choosing the transport solver; implementing and validating the method; extending the method to multiscale problems; and measuring the impact.
 These are the major steps in the project; the work involved to achieve them will fill gaps in science and engineering research that further DOE-ASCR goals.
-We will now describe the approach we will use to fulfill each of these tasks. 
+We will now describe the approach we will use to fulfill each of these tasks.
 
 %-----------------------------
 %-----------------------------
@@ -303,7 +314,7 @@ $\bullet$ \underline{Numerically Determining $p(s)$:}
 
 The initial phase of this work will focus on the development and analysis of the numerical approach to obtain the homogenized free-path distribution $p(s)$ in general, 3D, stochastic and heterogeneous systems.
 This will be accomplished by taking full advantage of the team's expert in graphics research.
-Tapping into this expertise, we will apply cutting-edge techniques used in volume-rendering algorithms to efficiently tally an accurate numerical estimate of the ensemble-averaged $p(s)$ in these random systems. 
+Tapping into this expertise, we will apply cutting-edge techniques used in volume-rendering algorithms to efficiently tally an accurate numerical estimate of the ensemble-averaged $p(s)$ in these random systems.
 
 This algorithm will first be implemented in a scoping code for method characterization and investigation.
 Determining the best way to obtain the ensemble-averaged $p(s)$ for any stochastic mixture will be the primary challenge of this task; the lessons learned in doing so will be a valuable contribution to the wider scientific community.
@@ -347,13 +358,13 @@ After the successful implementation and validation of the proposed model, we wil
 This will enable us to ``fine-tune'' the $p(s)$ at different regions of the system, allowing us to effectively describe the non-classical transport process as a multiscale problem.
 
 This gives us a set of coupled multiscale transport equations in the larger system that can be solved without the cost of fine resolution for the $p(s)$ everywhere, while still preserving significant information where needed.
-We will perform a thorough sensitivity analysis and will broaden the uncertainty quantification approach used in the first task to include this extended, multiscale homogenization of $p(s)$. 
+We will perform a thorough sensitivity analysis and will broaden the uncertainty quantification approach used in the first task to include this extended, multiscale homogenization of $p(s)$.
 
 %-----------------------------
 %-----------------------------
 $\bullet$ \underline{Measuring Impact}
 
-We will measure the impact of the proposed model by analyzing its performance (accuracy, time, etc.) compared to current homogenization techniques and other non-homogenization approaches.
+We will measure the impact of the proposed model by analyzing its performance (accuracy, time, etc.) compared to current homogenization techniques and other approaches than homogenization.
 We will investigate how the choice of the system affects its performance, and what kind of real-world applications are best suited to the non-classical theory.
 We will also determine how efficiently this approach models multiscale and multiresolution problems.
 
@@ -367,7 +378,10 @@ These tools will have the capability to accurately and efficiently solve coupled
 They will also contain an approach to quantify the uncertainties that emerge from the non-classical homogenization.
 
 The second deliverable will consist of a series of impact studies on relevant application problems, which will become a powerful demonstration platform for our innovative methods in theoretical and computational transport.
-At a minimum, we will pursue radiative transfer in atmospheric clouds, computational graphics, and nuclear reactor core physics.
+At a minimum, we will pursue:
+(1) transport physics in certain nuclear reactor cores,
+(2) solar radiative transfer in atmospheric clouds, and
+(3) computational graphics.
 We will provide a set of results and corresponding analysis from these impact studies using realistic problems;
 these will be the first examples of the impact that this new approach can have by incorporating non-classical transport characteristics.
 
@@ -383,12 +397,13 @@ This research is accomplishable because of the technical quality of the proposed
 Our project team is strongly interdisciplinary, formed by experts in the different areas of the proposed scope:
 
 $\bullet$ Slaybaugh is an Assistant Professor of Nuclear Engineering at UC Berkeley, with experience in deterministic and Monte Carlo radiation transport codes, high-quality software development, and supercomputing.
-Her research program is based in computational methods applied to existing and advanced nuclear reactors, nuclear non-proliferation and security, and shielding applications. 
+Her research program is based in computational methods applied to existing and advanced nuclear reactors, nuclear non-proliferation and security, and shielding applications.
 
 $\bullet$ Vasques is a Project Scientist at UC Berkeley, with experience in mathematical and computational modeling, stochastic processes, and transport theory.
 His main area of research is based on modeling transport processes in stochastic mixtures, focusing on non-classical particle transport.
 
-$\bullet$ Davis...
+$\bullet$ Davis is a Caltech Research Scientist working for NASA's Jet Propulsion Laboratory.  He is a leading expert in 3D radiative transfer (RT) in atmospheric clouds and cloud fields, covering theoretical, computational and observational aspects.
+His current interests are in the application of the ``generalized'' RT model to practical problems posed by unresolved fine-scale spatial and spectral variabilities.  In parallel, he is involved in collaborative efforts in 3D cloud reconstruction based on multi-angle/multi-pixel data, efficient numerical 3D RT modeling and recent advances in inverse problem theory.
 
 $\bullet$ Wrenninge...
 
@@ -396,7 +411,7 @@ $\bullet$ Frank...
 
 
 %-----------------------------
-%----------------------------- 
+%-----------------------------
 \section{Timeline and Responsibilities}
 
 \textcolor{red}{[note: to be deleted] It should also include a timeline for the major activities of the proposed
@@ -438,7 +453,7 @@ The following is the project's timeline, identifying the major activities and in
 \end{itemize}
 \item \textit{Year 3}
 \begin{itemize}[noitemsep]
-\item Complete quantifying uncertainty associated with homogenizing the system: Frank, Vasques 
+\item Complete quantifying uncertainty associated with homogenizing the system: Frank, Vasques
 \item Complete extending the method to multiscale: All
 \item Conduct impact tests: Davis, Slaybaugh, Vasques
 \end{itemize}
@@ -455,7 +470,7 @@ The following is the project's timeline, identifying the major activities and in
 \pagenumbering{gobble}
 
 \begin{center}
-{\bf APPENDIX 3 -- BIBLIOGRAPHY \& REFERENCES CITED} 
+{\bf APPENDIX 3 -- BIBLIOGRAPHY \& REFERENCES CITED}
 \end{center}
 
 \begin{thebibliography}{10}
@@ -506,7 +521,7 @@ L.~Dumas and F.~Golse.
 \textit{SIAM Journal on Applied Mathematics} \textbf{60}: 1447--1470 (2000). \vspace{-5pt}
 
 \bibitem{cailac00}
-B.~Cairns, A.A.~Lacis, and B.E.~Carlson. 
+B.~Cairns, A.A.~Lacis, and B.E.~Carlson.
 ``Absorption within inhomogeneous clouds and its parameterization in general circulation models.''
 \textit{Journal of the Atmospheric Sciences} \textbf{57}: 700--714 (2000).\vspace{-5pt}
 
@@ -560,16 +575,16 @@ M.~Frank, K.~Krycki, E.W.~Larsen, and R.~Vasques.
 ``The nonclassical Boltzmann equation, and diffusion-based approximations to the Boltzmann equation.''
 \textit{SIAM Journal on Applied Mathematics} \textbf{75}: 1329--1345 (2015). \vspace{-5pt}
 
-\bibitem{vas16} 
+\bibitem{vas16}
 R.~Vasques.
 ``The nonclassical diffusion approximation to the nonclassical linear Boltzmann equation.''
 \textit{Applied Mathematics Letters} \textbf{53}: 63--68 (2016).
 \vspace{-5pt}
 
-\bibitem{frasun16} 
+\bibitem{frasun16}
 M.~Frank and W.~Sun.
 ``Fractional diffusion limits of non-classical transport equations.'' (2016).\\
-\href{http://arxiv.org/pdf/1607.04028.pdf}{arXiv:1607.04028 [math.AP]} 
+\href{http://arxiv.org/pdf/1607.04028.pdf}{arXiv:1607.04028 [math.AP]}
 \vspace{-5pt}
 
 \bibitem{vaskry16}
