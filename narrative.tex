@@ -96,10 +96,6 @@ itemindent=7.5cm]
 
 \pagebreak
 
-IF WE MAKE IT COLLABORATIVE THERE IS A COVER PAGE SUPPLEMENT
-
-\pagebreak
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -126,16 +122,18 @@ The main impact of this work will be on improving the modeling of transport proc
 We will develop a methodology that will allow us to accurately solve coupled multiscale transport problems in highly heterogeneous systems.
 We will also develop an approach to quantify uncertainty with respect to the particular homogenization of the medium.
 
-Accurate modeling transport processes in optical media is integral to several real-world applications that are in line with the goals of the Department of Energy (DOE) and the Advanced Scientific Computing Research (ASCR) program.
-These include radiative transfer in the Earth's cloudy atmosphere (see \cite{davxu14,xudav16}, and references therein), neutron transport in certain types of nuclear reactors (see \cite{fragre11,vaslar14b}, and references therein), and computational graphics (CG) rendering (see \cite{yueiwa10,deon14}, and references therein).
+Accurate modeling of transport processes in optical media is integral to several real-world applications that are in line with the goals of the Department of Energy (DOE) and the Advanced Scientific Computing Research (ASCR) program.
+These include neutron transport in certain types of nuclear reactors (see \cite{fragre11,vaslar14b}, and references therein), radiative transfer in the Earth's cloudy atmosphere (see \cite{davxu14,xudav16}, and references therein), and computational graphics (CG) rendering (see \cite{yueiwa10,deon14}, and references therein).
 Due to the complexity of these systems, spatial variations are often represented with stochastic models.
 
 There are many ways to address stochastic spatial variability in a transport medium; a widely-used and natural approach is \textit{homogenization} \cite{dumgol00,cailac00}.
-In this approach, the solution of the transport problem in the heterogeneous stochastic medium is accurately predicted by solving a transport problem in an uniform medium.
-Current approaches to homogenize and model particle transport in these applications fail to properly capture important physical aspects of the system \cite{larvas11,davxu14,xudav16,vaslar14b,vas13}.
-****BE CAREFUL HERE THE ABOVE PAPERS DESCRIBE THE SOLUTIONS, INCLUDING OURS, NOT THE PROBLEMS, WICH IS WHAT YOU EXPECT AT THE END OF THIS SENTENCE!****
+In this approach, the solution of the transport problem in the heterogeneous stochastic medium is predicted by solving a transport problem in an uniform medium.
+The accuracy with which this \textit{homogenized} uniform medium mimics the physics of the random system will depend on the homogenization approach.
+In this work, we propose to homogenize and model particle transport in these applications using a \textit{non-classical theory}, which can properly capture and preserve important physical aspects of the system \cite{larvas11,davxu14,xudav16,vaslar14b,vas13}.
 
-In this project, we will focus in particular on ****SOMETHING COMPELLING HERE ON PBRs (including acroynm definition) AND WHY THEY ARE A PROMISSING DEVELOPMENT IN NE (safety?)****
+In this project, we will focus in particular on improving predictive capabilities and increasing spatial resolution of neutron transport calculations in Pebble Bed Reactor (PBR) cores.
+The PBR is a graphite-moderated, helium- or liquid salt-cooled, very-high-temperature (generation IV) reactor concept with highly desirable characteristics.
+These include convenient long-term waste storage, meltdown-proof passive safety, modular construction, on-line refueling, and means to hydrogen production and desalination \cite{htrpm,pbmr,mpbr}.
 
 We will also address the challenges involved in modeling the transport of solar and thermal radiation in atmospheric clouds.
 The ability to do that accurately in the cloudy atmosphere is crucial to climate modeling research.
@@ -152,13 +150,13 @@ Models that can represent the physics across a range of scales are likely to be 
 \end{quote}
 This is exactly what our proposed work does: it includes a memory variable (the free-path of the particle) to preserve important physical aspects of the stochastic system.
 
-In addition, we will establish a cross-disciplinary collaboration in the field of computer graphics.
+In addition, we will establish a cross-disciplinary collaboration in the field of computer graphics, as computing the light transport equations is central to many rendering algorithms.
 Incorporating non-classical free-paths in volume-rendering algorithms will produce more realistic images, as deep penetration of photons is a key feature of high albedo media.
-Since this is what happens in atmospheric clouds, we will study the impact of the proposed model in CG rendering.
-We will make use of the synergy between these two applications to develop novel approaches, which will provide many insights to both communities.
+We will study the parallels and lessons from research done in nuclear physics, among other areas, and how that connects, mirrors, and informs CG rendering.
+Specifically, we will make use of the synergy between these two applications to develop novel approaches, which will provide many insights to both communities.
 
 Finally, we point out that the work we propose will open new research avenues in vital areas of interest for the Applied Mathematics topic area of the ASCR program.
-These include, but are not limited to, the implementation of novel computational methods for solving the differential, intergal, and integro-differential equations involved; studies in uncertainty quantification; innovations in computing large systems of linear equations; and the development of coupled multiscale models.
+These include, but are not limited to, the implementation of novel computational methods for solving the differential, integral, and integro-differential equations involved; studies in uncertainty quantification; innovations in computing large systems of linear equations; and the development of coupled multiscale models.
 In short, this work supports the Applied Mathematics goal to solve problems of interest with greater accuracy by more accurately capturing the physics.
 
 In the following sections we will describe the work we will undertake, why it will contribute to advancing the knowledge and understanding of transport problems in stochastic media, and how we will complete the objectives of the proposal.
@@ -202,7 +200,7 @@ Now consider a much larger system formed by randomly placing many of these volum
     \caption{Heterogeneous random system formed by many volumes suspended in a void.}
     \label{fig2}
 \end{figure}
-This type of clumpy medium is present in Pebble Bed Reactors (PBRs) \cite{fragre11,vaslar14b}, where the volume regions represent the fuel pebbles in the reactor core, with thousands of them piled on top of one another in a random manner.  Real clouds in planetary atmospheres, starting with the Earth's, are constantly churned by turbulent motion, and this generates strong spatial heterogeneity in their local microphysical and hence optical properties.
+This type of clumpy medium is present in PBRs \cite{fragre11,vaslar14b}, where the volume regions represent the fuel pebbles in the reactor core, with thousands of them piled on top of one another in a random manner.  Real clouds in planetary atmospheres, starting with the Earth's, are constantly churned by turbulent motion, and this generates strong spatial heterogeneity in their local microphysical and hence optical properties.
 
 It is common to use a homogenization model to address transport problems in this kind of random system.
 This type of approach seeks to develop effective material properties that can be used in the solution of a transport problem for a uniform medium, while achieving an accurate prediction of the flux behavior in the heterogeneous stochastic medium.
@@ -210,7 +208,7 @@ Nevertheless, standard homogenization techniques inherently assume that \cref{eq
 
 However, the assumption that $\Sigma_t$ is independent of $s$ is not valid when the locations of the volume regions in the system are correlated.
 This correlation leads to a \textit{non-exponential} free-path distribution $p(s)$; we refer this type of transport processes \textit{non-classical}.
-The classical homogenization approaches used to address these problems are not capable of preserving the true non-exponential attenuation law that arises in these heterogeneous systems \cite{larvas11,davxu14,vaslar14b,xudav16,vas13}.
+The classical homogenization approaches used to address these problems are not capable of preserving the true non-exponential attenuation law that arises in these heterogeneous systems.
 This leads to unreliable estimates of the particle flux in these applications, due to important physical quantities being poorly approximated.
 
 The challenge is to develop and implement a methodology that (i) determines the true free-path distribution in these systems, and (ii) uses that information in a model that preserves the physics of these stochastic processes.
@@ -263,20 +261,133 @@ A similar kinetic equation with free-path as an independent variable has been ri
 
 We have already shown that the classical linear Boltzmann equation and diffusion-based approximations are particular cases of the non-classical equation \cite{frakry15,vas16}.
 Moreover, one can combine moment methods and the Fourier transform to derive fractional diffusion equations from the non-classical transport equation \cite{frasun16}.
-This is key to model radiative transfer problems in atmospheric clouds, where generalized (a.k.a. anomalous) diffusion arises due to long-tailed free-path distributions.
-****NEED REFERENCES FOR THIS STATEMENT****
-PLEASE USE Davis and Marshak (1997) and Scholl et al. (2006) IN MY 2-PAGE CV***
+This is key to model radiative transfer problems in atmospheric clouds, where generalized (a.k.a. anomalous) diffusion arises due to long-tailed free-path distributions \cite{davmar97,schetal06}.
 
-With respect to Pebble Bed Reactors, non-classical methods have been shown to outperform current homogenization techniques in diffusive systems \cite{larvas11,vaslar14b,vas13} and in certain types of one-dimensional (1D) transport problems \cite{vaskry16}.
-****NEEDS SOME ELABORATION, PREFERABLY WITH A FIGURE****
+With respect to nuclear reactor applications, the non-classical theory has been shown to be more accurate than classical approaches in certain types of one-dimensional (1D) transport problems \cite{vaskry16}.
+\Cref{fig3} depicts the ensemble-averaged scalar fluxes obtained with non-classical and classical (atomic mix) approaches in a 1D random periodic system consisting
+of alternating layers of solid and void materials.
+\begin{figure}[hbt]
+    \centering
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{fig3a}
+    \end{subfigure}
+        \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{fig3b}
+    \end{subfigure}
+    \caption{Ensemble-averaged scalar fluxes in a 1D random periodic system with parameters as defined in \cite{vaskry16}. The scattering ratio $c$ of the solid material is defined as 0 (\textbf{left}) and 0.99 (\textbf{right}).}
+    \label{fig3}
+\end{figure}
 
-With respect to atmospheric clouds, co-I Davis and co-workers have used the explicit parameterization $p_a(s) = \langle\Sigma_t\rangle/\left(1+\langle\Sigma_t\rangle s/a\right)^{1+a}$, where $\langle\Sigma_t\rangle$ is the average cross-section and $a$ is the spatial variability parameter.  It ranges from unity (excluded) to infinity (included).  In the later limit, the classic exponential law in \cref{eq1} is recovered.  In the former one, the mean-free-path diverges and this is not seen in the observations $[Scholl_ref]$.  This choice of $p(s)$ defines the generalized radiative transfer (GRT) model [2refs] (previously called ``anomalous'' or ``L\'evy'' transport [DavisMarshak97]).  Figure~****a shows a series of GRT particle random walks in a medium with a common $\langle\Sigma_t\rangle$ but $a$ decreasing from $\infty$ to 1.2.  We notice the similarity of the clusters of small steps that would occur in localized opaque regions, i.e., isolated clouds, and the increasingly large jumps between these clusters/clouds as the tail of the selected $p(s)$ distributions in Fig.~****b becomes longer.
+Non-classical methods also outperform current homogenization techniques in PBR diffusive systems \cite{larvas11,vaslar14b,vas13}.
+\Cref{tab1} shows the gain in accuracy attained with the non-classical theory in estimating diffusion coefficients for transport problems in PBR random structures.
+It displays isotropic ($iso$) and anisotropic ($gt$) diffusion coefficients obtained with the non-classical theory, and compares these results with those obtained by classical approaches: atomic mix ($am$), Behrens correction ($B$), and Lieberoth correction ($L$).
+Relative errors are calculated with respect to benchmark Monte Carlo ($mc$) results.
+\begin{table}[!ht]
+\small
+\centering
+\caption{Diffusion coefficients in PBR random systems \cite{vaslar14b}}\label{tab1}
+\begin{tabular}{||cc||c|c||c|c|c||c||c|c||}\hline\hline
+&& \multicolumn{2}{c||}{Monte} & \multicolumn{3}{c||}{Atomic Mix} & \multicolumn{3}{c||}{Non-classical}\\
+&& \multicolumn{2}{c||}{Carlo} & \multicolumn{3}{c||}{and Corrections} & \multicolumn{3}{c||}{Theory}\\
+\cline{3-10}
+&&&&&&&&&\\
+\multicolumn{2}{||c||}{{\bf Problem}} &D$_{xy}^{mc}$&D$_z^{mc}$&D$^{am}$&D$^{B}$&D$^{L}$ & D$^{iso}$  &D$_{xy}^{gt}$ & D$_z^{gt}$\\
+&&&&&&&&&\\
+\hline\hline
+\multicolumn{1}{||c|}{$\mathbf{\cdot}$}&{\footnotesize Diffusion} &&&&&&&&\\
+\multicolumn{1}{||c|}{$\mathbf{\cdot}$} &{\footnotesize Coeff.}&
+0.6144
+&0.6157
+&0.5617
+&0.6009
+&0.5990
+&0.6147
+&0.6146
+&0.6150\\
+\cline{2-10}
+\multicolumn{1}{||c|}{{\bf 1}} &{\footnotesize error$_{xy}$} &&&&&&&&\\
+\multicolumn{1}{||c|}{$\mathbf{\cdot}$} &{\footnotesize (\%)} &
+-
+& -
+&8.580
+&2.201
+&2.506
+&0.049
+&0.029
+& -\\
+\cline{2-10}
+\multicolumn{1}{||c|}{$\mathbf{\cdot}$} &{\footnotesize error$_z$} &&&&&&&&\\
+\multicolumn{1}{||c|}{$\mathbf{\cdot}$} &{\footnotesize (\%)} &
+-
+& -
+&8.776
+&2.411
+&2.716
+&0.166
+& -
+&0.126
+\\
+\hline
+\hline
+\multicolumn{1}{||c|}{$\mathbf{\cdot}$}&{\footnotesize Diffusion} &&&&&&&&\\
+\multicolumn{1}{||c|}{$\mathbf{\cdot}$} &{\footnotesize Coeff.}
+&0.3286
+&0.3295
+&0.2809
+&0.3200
+&0.3214
+&0.3326
+&0.3324
+&0.3329\\
+\cline{2-10}
+\multicolumn{1}{||c|}{{\bf 2}} &{\footnotesize error$_{xy}$} &&&&&&&&\\
+\multicolumn{1}{||c|}{$\mathbf{\cdot}$} &{\footnotesize (\%)} &
+-
+& -
+&14.542
+&2.617
+&2.214
+&1.204
+&1.154
+& -\\
+\cline{2-10}
+\multicolumn{1}{||c|}{$\mathbf{\cdot}$} &{\footnotesize error$_z$} &&&&&&&&\\
+\multicolumn{1}{||c|}{$\mathbf{\cdot}$} &{\footnotesize (\%)} &
+-
+& -
+&14.771
+&2.877
+&2.475
+&0.934
+& -
+&1.034
+\\
+\hline
+\hline
+\end{tabular}
+\end{table}
 
-\begin{center}
-*****PLACEHOLDER FOR EXAMPLE OF RADITIVE TRANSFER RESULTS*****
-Insert and format two panels in emailed PDFs.  Caption with
-{Figure 3: (a) 2D unbounded random walks, 100 steps each, all starting in the same direction at the origin of the axes, by isotropically scattered particles following $p_a(s)$ with the choices of $a$ called out in the text.  (b) Log plots of $p(s)$ for the traces plotted in panel (a).}
-\end{center}
+With respect to atmospheric clouds, co-I Davis and co-workers have used the explicit parameterization $p_a(s) = \langle\Sigma_t\rangle/\left(1+\langle\Sigma_t\rangle s/a\right)^{1+a}$, where $\langle\Sigma_t\rangle$ is the average cross-section and $a$ is the spatial variability parameter.
+It ranges from unity (excluded) to infinity (included).
+In the later limit, the classic exponential law in \cref{eq1} is recovered.
+In the former one, the mean-free-path diverges and this is not seen in the observations \cite{schetal06}.
+This choice of $p(s)$ defines the generalized radiative transfer (GRT) model \cite{davxu14,xudav16} (previously called ``anomalous'' or ``L\'evy'' transport \cite{davmar97}).
+\Cref{fig4} shows a series of GRT particle random walks in a medium with a common $\langle\Sigma_t\rangle$ but $a$ decreasing from $\infty$ to 1.2.
+We notice the similarity of the clusters of small steps that would occur in localized opaque regions, i.e., isolated clouds, and the increasingly large jumps between these clusters/clouds as the tail of the selected $p(s)$ distributions becomes longer.
+\begin{figure}[hbt]
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{fig4a.jpg}
+    \end{subfigure}
+        \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{fig4b}
+    \end{subfigure}
+    \caption{\textbf{Left}: 2D unbounded random walks, 100 steps each, all starting in the same direction at the origin of the axes, by isotropically scattered particles following $p_a(s)$ with the choices of $a$ called out in the text. \textbf{Right}: Log plots of $p(s)$ for the traces plotted in the left panel.}\label{fig4}
+\end{figure}
 
 These preliminary numerical results offer a strong case for the non-classical theory, and justify the efforts to develop and improve related tools.
 However, results for transport problems in higher dimensions have not yet been performed. The reason is that, in order to solve the non-classical transport equation, one must know the true (ensemble-averaged) free-path distribution function of the system.
@@ -399,11 +510,13 @@ Our project team is strongly interdisciplinary, formed by experts in the differe
 $\bullet$ Slaybaugh is an Assistant Professor of Nuclear Engineering at UC Berkeley, with experience in deterministic and Monte Carlo radiation transport codes, high-quality software development, and supercomputing.
 Her research program is based in computational methods applied to existing and advanced nuclear reactors, nuclear non-proliferation and security, and shielding applications.
 
-$\bullet$ Vasques is a Project Scientist at UC Berkeley, with experience in mathematical and computational modeling, stochastic processes, and transport theory.
+$\bullet$ Vasques is a Project Scientist at UC Berkeley, with experience in mathematical and computational modeling of transport and diffusion processes, homogenization methods, variance reduction techniques, and stochastic processes.
 His main area of research is based on modeling transport processes in stochastic mixtures, focusing on non-classical particle transport.
 
-$\bullet$ Davis is a Caltech Research Scientist working for NASA's Jet Propulsion Laboratory.  He is a leading expert in 3D radiative transfer (RT) in atmospheric clouds and cloud fields, covering theoretical, computational and observational aspects.
-His current interests are in the application of the ``generalized'' RT model to practical problems posed by unresolved fine-scale spatial and spectral variabilities.  In parallel, he is involved in collaborative efforts in 3D cloud reconstruction based on multi-angle/multi-pixel data, efficient numerical 3D RT modeling and recent advances in inverse problem theory.
+$\bullet$ Davis is a Caltech Research Scientist working for NASA's Jet Propulsion Laboratory.
+He is a leading expert in 3D radiative transfer (RT) in atmospheric clouds and cloud fields, covering theoretical, computational and observational aspects.
+His current interests are in the application of the ``generalized'' RT model to practical problems posed by unresolved fine-scale spatial and spectral variabilities.
+In parallel, he is involved in collaborative efforts in 3D cloud reconstruction based on multi-angle/multi-pixel data, efficient numerical 3D RT modeling and recent advances in inverse problem theory.
 
 $\bullet$ Wrenninge...
 
@@ -470,7 +583,7 @@ The following is the project's timeline, identifying the major activities and in
 \pagenumbering{gobble}
 
 \begin{center}
-{\bf APPENDIX 3 -- BIBLIOGRAPHY \& REFERENCES CITED}
+{\bf BIBLIOGRAPHY \& REFERENCES CITED}
 \end{center}
 
 \begin{thebibliography}{10}
@@ -530,6 +643,24 @@ R.~Vasques.
 ``Estimating anisotropic diffusion of neutrons near the boundary of a pebble bed random system.''
 \textit{International Conference on Mathematics and Computational Methods Applied to Nuclear Science \& Engineering}, May 5--9, Sun Valley, ID, U.S.A. (2013).\vspace{-5pt}
 
+\bibitem{pbmr}
+A.~Koster, H.D.~Matzner, and D.R.~Nicholsi.
+``PBMR Design for the Future.''
+\textit{Nuclear Engineering and Design} \textbf{222}: 231--245 (2003).
+\vspace{-5pt}
+
+\bibitem{htrpm}
+Z.~Zhang, Z.~Wu, Y.~Sun, and F.~Li.
+``Design aspects of the Chinese modular high-temperature gas-cooled reactor HTR-PM.''
+\textit{Nuclear Engineering and Design} \textbf{236}: 485--490 (2006).
+\vspace{-5pt}
+
+\bibitem{mpbr}
+A.C.~Kadak.
+``MIT Pebble-Bed Reactor Project.''
+\textit{Nuclear Engineering and Technology} \textbf{39}: 95--102 (2007).
+\vspace{-5pt}
+
 \bibitem{ipcc13}
 IPCC, 2013: Summary for Policymakers.
 In: \textit{Climate Change 2013: The Physical Science Basis. Contribution of
@@ -587,6 +718,19 @@ M.~Frank and W.~Sun.
 \href{http://arxiv.org/pdf/1607.04028.pdf}{arXiv:1607.04028 [math.AP]}
 \vspace{-5pt}
 
+\bibitem{davmar97}
+A.~Davis and A.~Marshak.
+``L\'evy kinetics in slab geometry: Scaling of transmission probability.''
+In: \textit{Fractal Frontiers;} M.M.~Novak and T.G.~Dewey (eds.).
+World Scientific, Singapore, pp. 63-72 (1997).
+\vspace{-5pt}
+
+\bibitem{schetal06}
+T.~Scholl, K.~Pfeilsticker, A.B.~Davis, H.~Klein Baltink, S.~Crewell, U.~L\"ohnert, C.~Simmer, J.~Meywerk, and M.~Quante.
+``Path length distributions for solar photons under cloudy skies: Comparison of measured first and second moments with predictions from classical and anomalous diffusion theories.''
+\textit{Journal of Geophysical Research} \textbf{111}: D12211--12226 (2006).
+\vspace{-5pt}
+
 \bibitem{vaskry16}
 R.~Vasques, K.~Krycki, and R.N.~Slaybaugh.
 ``Nonclassical particle transport in 1-D random periodic media.''
@@ -598,6 +742,7 @@ R.~Vasques, R.N.~Slaybaugh, and K.~Krycki.
 ``Nonclassical particle transport in the 1-D diffusive limit.''
 \textit{Transactions of the American Nuclear Society} \textbf{114}: 361--364 (2016).
 \vspace{-5pt}
+
 
 
 \end{thebibliography}
