@@ -1,0 +1,89 @@
+\documentclass[12pt]{article}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{epsfig}
+\usepackage{times}
+\renewcommand{\ttdefault}{cmtt}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{xspace}
+\usepackage{mathrsfs}
+\usepackage[mathcal]{euscript}
+\usepackage{color}
+\usepackage{array}
+\usepackage[pdftex,hidelinks]{hyperref}
+\usepackage[parfill]{parskip}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\usepackage{subcaption}
+\usepackage{cite}
+\usepackage{titlesec}
+\usepackage[capitalize,compress]{cleveref}
+
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+\titleformat*{\section}{\Large\bfseries}
+\titleformat*{\subsection}{\large\bfseries}
+\titlespacing{\section}{0pt}{0pt plus 2pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing{\subsection}{0pt}{\parskip}{-\parskip}
+
+% math syntax
+\newcommand{\rvec}{\ensuremath{\vec{r}}}
+\newcommand{\vecr}{\ensuremath{\vec{r}}}
+\newcommand{\vecx}{\ensuremath{\vec{x}}}
+\newcommand{\vecy}{\ensuremath{\vec{y}}}
+\newcommand{\omvec}{\ensuremath{\hat{\Omega}}}
+\newcommand{\vOmega}{\ensuremath{\hat{\Omega}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%COVER PAGE
+
+\pagenumbering{gobble}
+
+\begin{center}
+{\bf  NON-CLASSICAL
+TRANSPORT THEORY WITH MULTISCALE PATH DISTRIBUTIONS IN REAL-WORLD APPLICATIONS}\\ \vspace{5pt}
+Rachel N. Slaybaugh, \textit{University of California, Berkeley} (Principal Investigator)\\
+Richard Vasques, \textit{University of California, Berkeley} (Co-Investigator)\\
+Anthony B. Davis, \textit{Jet Propulsion Lab. / California Inst. of Technology} (Co-Investigator)\\
+Magnus Wrenninge, \textit{Zoox, Menlo Park} (Collaborator)\\
+Martin Frank, \textit{RWTH Aachen University, Germany} (Collaborator)
+\end{center}\vspace{-20pt}
+
+\setlength{\unitlength}{1in}
+\begin{picture}(6,.1)
+\put(0,0) {\line(1,0){6.5}}
+\end{picture}
+
+%----------------------------------------------------------------------
+%----------------------------------------------------------------------
+We propose to establish and formalize the mathematical foundation of a novel homogenization approach known as non-classical transport, which will enable better mathematical and computational modeling of particle and radiation transport calculations in heterogeneous random media.
+The focus will be on advancing the mathematical aspects of the non-classical theory, and on developing a set of computational tools to solve general, three-dimensional (3D) non-classical transport problems in real-world applications.
+
+We will leverage computational techniques currently used in computer graphics (CG) research to create a tool that will allow us to numerically estimate the probability density function of a particle's free-path in 3D stochastic and heterogeneous systems.
+This will enable us to solve the full non-classical transport equation and study its performance in different scenarios, while addressing a number of current challenges in the areas of applied mathematics and engineering.
+
+One of the main features of this approach will be the ability to refine the resolution of the free-path distribution in different regions of the system, allowing us to accurately solve coupled multiscale transport problems in highly heterogeneous systems.
+The expectation is that the non-classical approach will be less costly and more accurate than existing methods once it is fully implemented, since it preserves important elements of physics that are not captured by the current models.
+We will also develop an approach to quantify uncertainty with respect to the particular homogenization of the medium.
+
+We will generate a series of impact studies on relevant application problems, which will become a powerful demonstration platform for our innovative methods in theoretical and computational transport.
+At a minimum, we will pursue: (1) transport physics in certain nuclear reactor cores, (2) solar radiative transfer in atmospheric clouds, and (3) computational
+graphics.
+We will provide a set of results and corresponding analysis from these impact studies using realistic problems; these will be the first examples of the impact that this new approach can have by incorporating non-classical transport characteristics.
+Furthermore, we will focus in identifying how the improvements obtained with this new methodology will impact exascale-resolution problems.
+
+\end{document}
