@@ -91,7 +91,7 @@ itemindent=7.5cm]
  Comp. Research}
 \item[\quad Topic Area:]							{\bf Applied Mathematics}
 \item[\quad Topic Area Program Manager:] {\bf Steven Lee}\vspace{12pt}
-\item[$\bullet$\, PAMS Preproposal Tracking Number:] {\bf ??????????}
+\item[$\bullet$\, PAMS Preproposal Tracking Number:] {\bf PRE-0000008821}
 \end{itemize}
 
 \pagebreak
@@ -129,6 +129,9 @@ Due to the complexity of these systems, spatial variations are often represented
 There are many ways to address stochastic spatial variability in a transport medium; a widely-used and natural approach is \textit{homogenization} \cite{dumgol00,cailac00}.
 In this approach, the solution of the transport problem in the heterogeneous stochastic medium is predicted by solving a transport problem in an uniform medium.
 The accuracy with which this \textit{homogenized} uniform medium mimics the physics of the random system will depend on the homogenization approach.
+
+Current homogenization techniques fail to accurately represent the true behavior of the transport process taking place in certain types of random and heterogeneous systems.
+Situations in which classical homogenization performs poorly include anomalous diffusion, L\`evy flights, long-range correlations, and non-exponential decay, to name a few.
 In this work, we propose to homogenize and model particle transport in these applications using a \textit{non-classical theory}, which can properly capture and preserve important physical aspects of the system \cite{larvas11,davxu14,xudav16,vaslar14b,vas13}.
 
 In this project, we will focus in particular on improving predictive capabilities and increasing spatial resolution of neutron transport calculations in Pebble Bed Reactor (PBR) cores.
@@ -259,7 +262,8 @@ A similar kinetic equation with free-path as an independent variable has been ri
 %----------------------------------------------------------------------
 \section{Related Preliminary Results}
 
-We have already shown that the classical linear Boltzmann equation and diffusion-based approximations are particular cases of the non-classical equation \cite{frakry15,vas16}.
+We have already shown that the simplified P$_1$ (SP$_1$, or classical diffusion), SP$_2$, and SP$_3$ approximations to the \textit{classical} linear Boltzmann equation can be represented exactly by a non-classical transport equation for an infinite, homogeneous medium \cite{frakry15}.
+Similarly, the non-classical transport equation can also exactly represent the  \textit{non-classical diffusion equation} \cite{vas16}.
 Moreover, one can combine moment methods and the Fourier transform to derive fractional diffusion equations from the non-classical transport equation \cite{frasun16}.
 This is key to model radiative transfer problems in atmospheric clouds, where generalized (a.k.a. anomalous) diffusion arises due to long-tailed free-path distributions \cite{davmar97,schetal06}.
 
@@ -429,7 +433,8 @@ Tapping into this expertise, we will apply cutting-edge techniques used in volum
 
 This algorithm will first be implemented in a scoping code for method characterization and investigation.
 Determining the best way to obtain the ensemble-averaged $p(s)$ for any stochastic mixture will be the primary challenge of this task; the lessons learned in doing so will be a valuable contribution to the wider scientific community.
-We will carry on the mathematical formalization of the methodology, and will analyse methods to quantify the uncertainty arising from the homogenization of $p(s)$ in these systems.
+We will carry on the mathematical formalization of the methodology, and will quantify the uncertainty arising from the choice of $p(s)$.
+This will be done by performing a sensitivity analysis of the non-classical transport equation with respect to $p(s)$ using adjoint calculus \cite{barfra16,cac03}. 
 
 %-----------------------------
 %-----------------------------
@@ -520,16 +525,15 @@ In parallel, he is involved in collaborative efforts in 3D cloud reconstruction 
 
 $\bullet$ Wrenninge...
 
-$\bullet$ Frank...
+$\bullet$ Frank is a Professor for Computational Nuclear Engineering at RWTH Aachen University, Germany.
+He leads a group of two postdoctoral researchers and eight Ph.D. students.
+His research focuses on radiation transport, at the interface of analysis, numerical methods, and related inverse problems.
+Furthermore, the group is involved in several application-oriented projects with engineering groups and companies.
 
 
 %-----------------------------
 %-----------------------------
 \section{Timeline and Responsibilities}
-
-\textcolor{red}{[note: to be deleted] It should also include a timeline for the major activities of the proposed
-project, and should indicate which project personnel will be responsible for which activities.
-There should be no ambiguity about which personnel will perform particular parts of the project or the time at which these activities will take place.}
 
 The PI will be responsible for
 \begin{itemize}[noitemsep]
@@ -540,7 +544,7 @@ The PI will be responsible for
 \item Managing and administering awarded funds, assisted by the PI's institution
 \end{itemize}
 
-The Co-investigators and Key Personnel will be responsible for
+The co-Investigators and collaborators will be responsible for
 \begin{itemize}[noitemsep]
 \item Providing support and input throughout the project
 \item Contributing their time and expertise to specific tasks as applicable
@@ -552,21 +556,21 @@ The following is the project's timeline, identifying the major activities and in
 \item \textit{Year 1}
 \begin{itemize}[noitemsep]
 \item Numerically determine $p(s)$: Vasques, Wrenninge
-\item Begin quantifying uncertainty associated with homogenizing the system: Frank, Vasques
+\item Begin quantifying uncertainty associated with $p(s)$: Frank, Vasques
 \item Choose the transport solver: Davis, Slaybaugh, Vasques
 \item Begin method implementation: Slaybaugh, Vasques
 \item Begin identifying impact problem set: Davis, Slaybaugh, Wrenninge
 \end{itemize}
 \item \textit{Year 2}
 \begin{itemize}[noitemsep]
-\item Continue quantifying uncertainty associated with homogenizing the system: Frank, Vasques
+\item Continue quantifying uncertainty associated with $p(s)$: Frank, Vasques
 \item Complete method implementation, conduct associated validation: Slaybaugh, Vasques
 \item Finish identifying impact problem set: Davis, Slaybaugh, Wrenninge
 \item Begin extending the method to multiscale: Slaybaugh, Vasques, Wrenninge
 \end{itemize}
 \item \textit{Year 3}
 \begin{itemize}[noitemsep]
-\item Complete quantifying uncertainty associated with homogenizing the system: Frank, Vasques
+\item Complete quantifying uncertainty associated with $p(s)$: Frank, Vasques
 \item Complete extending the method to multiscale: All
 \item Conduct impact tests: Davis, Slaybaugh, Vasques
 \end{itemize}
@@ -743,6 +747,15 @@ R.~Vasques, R.N.~Slaybaugh, and K.~Krycki.
 \textit{Transactions of the American Nuclear Society} \textbf{114}: 361--364 (2016).
 \vspace{-5pt}
 
+\bibitem{barfra16}
+R.~Barnard, M.~Frank, and K.~Krycki.
+``Sensitivity analysis for dose deposition in radiotherapy via a Fokker-Planck model.''
+\textit{Mathematical Medicine and Biology}, DOI:10.1093/imammb/dqv039 (2016).
+\vspace{-5pt}
+
+\bibitem{cac03}
+D.~G.~Cacuci. \textit{Sensitivity \& Uncertainty Analysis, Volume 1: Theory.}
+London: Chapman \& Hall (2003).
 
 
 \end{thebibliography}
