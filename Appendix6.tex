@@ -1,0 +1,108 @@
+\documentclass[12pt]{article}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{epsfig}
+\usepackage{times}
+\renewcommand{\ttdefault}{cmtt}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{xspace}
+\usepackage{mathrsfs}
+\usepackage[mathcal]{euscript}
+\usepackage{color}
+\usepackage{array}
+\usepackage[pdftex,hidelinks]{hyperref}
+\usepackage[parfill]{parskip}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\usepackage{subcaption}
+\usepackage{cite}
+\usepackage{titlesec}
+\usepackage[capitalize,compress]{cleveref}
+
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+\titleformat*{\section}{\Large\bfseries}
+\titleformat*{\subsection}{\large\bfseries}
+\titlespacing{\section}{0pt}{0pt plus 2pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing{\subsection}{0pt}{\parskip}{-\parskip}
+
+% math syntax
+\newcommand{\rvec}{\ensuremath{\vec{r}}}
+\newcommand{\vecr}{\ensuremath{\vec{r}}}
+\newcommand{\vecx}{\ensuremath{\vec{x}}}
+\newcommand{\vecy}{\ensuremath{\vec{y}}}
+\newcommand{\omvec}{\ensuremath{\hat{\Omega}}}
+\newcommand{\vOmega}{\ensuremath{\hat{\Omega}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%COVER PAGE
+
+\pagenumbering{gobble}
+
+\begin{center}
+{\bf  NON-CLASSICAL
+TRANSPORT THEORY WITH MULTISCALE PATH DISTRIBUTIONS IN REAL-WORLD APPLICATIONS}\\ \vspace{5pt}
+\setlength{\unitlength}{1in}
+\begin{picture}(6,.1)
+\put(0,0) {\line(1,0){6.5}}
+\end{picture}
+\vspace{5pt}
+Appendix 6: Data Management Plan
+\end{center}
+
+
+\subsubsection*{Data types and sources}
+There are a few steps in our work:
+\begin{enumerate}
+\item method investigation and development
+\item larger-scale method implementation
+\item impact measurement
+\end{enumerate}
+
+We will make all data generated in steps 1 and 2 publicly available by hosting our developed software, test suite, and problem sets on a public GitHub repository. Given the nature of the work, this is the easiest and least expensive way to not only share tools between collaborators at differing institutions, but also to make our work transparent and accessible to the wider community. 
+
+Part 3 may require using software or problem specifications that are not all publicly available because of export control issues (e.g. use of nuclear-specific software and reactor specifications). We will endeavor to use tools that are as open as possible. In the cases where software or materials must remain closed to at least some communities, we will manage our work in a private repository. We will make published data sets available on the public repository (see discussion of publications below). We will also make materials available to anyone who does have appropriate licenses. 
+
+We will post the preprints of all publications from this work on arXiv. Included in our publications will be a link to the portion of our repository containing (excepting the applicable limitations above) all of the data used to generate each plot, scripts to generate plots, and input files used to generate the data. We will also include a link to the software we used. With this information, it should be possible to reproduce the results in the paper. We will note versions of items used (e.g.\ Python 2.7.12 and repository commit index for our software) to facilitate reproducibility.
+
+\subsubsection*{Content and format}
+In our software development we will use Doxgen-style code comments such that documentation can be easily generated. 
+
+Sharing and preservation
+To facilitate the accessibility of our work, we will do all investigatory development in Python and make our small problems available as Jupyter notebooks. We will make as much of our larger scale studies available as Jupyter notebooks as well. Hosting these on GitHub will facilitate accessibility and transparency. All software we use will be free. 
+
+\subsubsection*{Protection}
+As noted, we will refrain from publicly posting proprietary or export controlled information--we will only post relevant data that are publishable. We will not generate personally identifiable information through this work. All of our work will be hosted with appropriate license information, as designated by our home institutions.
+ 
+\subsubsection*{Rationale}
+Our plan is intended to serve several goals:
+\begin{enumerate}
+\item  transparency of science: to the largest extent possible the data we publish in papers, along with the software and input files will be available so that anyone can check our work.
+\item reproducibility: we will also include software version numbers, commit tags, and data processing/plotting scripts so that we or someone else can reproduce the work.
+\item larger impact: by making our work publicly available anyone will be able to pick up our work and use it themselves, or build upon it to further knowledge or build ever more useful computational tools.
+\end{enumerate}
+
+\subsubsection*{Software \& Codes}
+The Open Source License to be used, if applicable: we will use the Creative Commons Attribution license for text documents and the MIT license for software. 
+If executable versions of the software will also be released, and if so what format will be used: most development work will be in Python, which does not require an executable. We will not be able to generally distribute the application-specific software we will modify. In those cases the host institutions will distribute accepted code modifications through their own software release processes.
+
+How software can be found and accessed and the length of time the software will be publicly available: as noted, we will link to repositories in our papers and that information will be available for as long as GitHub exists. If the data appears to be imperiled for some reason, we will move it and update the arXiv preprint with the new information. 
+
+How any proprietary 3rd party software or libraries are used in the creation of this software: we will use third party Python libraries such as NumPy and SciPy. We may also modify application-specific software with our new methods. For nuclear engineering, we will likely modify neutron transport software associated with the MOOSE project at Idaho National Laboratory. For atmospheric transport, JPL will modify either internal codes. For image rendering, Zoox, Inc.  will modify their internal software. 
+ 
+
+\end{document}
