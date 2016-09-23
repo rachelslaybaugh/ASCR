@@ -500,6 +500,7 @@ We will also determine how efficiently this approach models multiscale and multi
 The first deliverable from this project will be a high-quality set of mathematical and computational tools to address non-classical transport problems in general 3D random systems.
 These tools will have the capability to accurately and efficiently solve coupled multiscale transport problems in systems with very strong heterogeneities.
 They will also contain an approach to quantify the uncertainties that emerge from the non-classical homogenization.
+% new software? existing software? small? large?
 
 The second deliverable will consist of a series of impact studies on relevant application problems, which will become a powerful demonstration platform for our innovative methods in theoretical and computational transport.
 At a minimum, we will pursue:
@@ -520,7 +521,7 @@ Furthermore, we will focus in identifying how the improvements obtained with thi
 This research is accomplishable because of the technical quality of the proposed work and the deep experience and strong capability of the applicant team.
 Our project team is strongly interdisciplinary, formed by experts in the different areas of the proposed scope:
 
-$\bullet$ Slaybaugh is an Assistant Professor of Nuclear Engineering at UC Berkeley, with experience in deterministic and Monte Carlo radiation transport codes, high-quality software development, and supercomputing.
+$\bullet$ Slaybaugh is an Assistant Professor of Nuclear Engineering at UC Berkeley, with experience in deterministic and Monte Carlo radiation transport methods, high-quality software development and reproducibility, and high-performance supercomputing.
 Her research program is based in computational methods applied to existing and advanced nuclear reactors, nuclear non-proliferation and security, and shielding applications.
 
 $\bullet$ Vasques is a Project Scientist at UC Berkeley, with experience in mathematical and computational modeling of transport and diffusion processes, homogenization methods, variance reduction techniques, and stochastic processes.
@@ -529,7 +530,7 @@ His main area of research is based on modeling transport processes in stochastic
 $\bullet$ Davis is a Caltech Research Scientist working for NASA's Jet Propulsion Laboratory.
 He is a leading expert in 3D radiative transfer (RT) in atmospheric clouds and cloud fields, covering theoretical, computational and observational aspects.
 His current interests are in the application of the ``generalized'' RT model to practical problems posed by unresolved fine-scale spatial and spectral variabilities.
-In parallel, he is involved in collaborative efforts in 3D cloud reconstruction based on multi-angle/multi-pixel data, efficient numerical 3D RT modeling and recent advances in inverse problem theory.
+In parallel, he is involved in collaborative efforts in 3D cloud reconstruction based on multi-angle/multi-pixel data, efficient numerical 3D RT modeling, and recent advances in inverse problem theory.
 
 $\bullet$ Wrenninge is a film industry veteran working on synthetic imagery for training and testing of neural networks at Zoox, a Menlo Park start-up developing Level 4 autonomous vehicles.
 He is an expert in computer graphics for film and photorealistic image production, with a specialization in rendering of participating media.
@@ -537,7 +538,7 @@ Before joining Zoox, he was a Principal Engineer at Pixar Animation Studios, whe
 
 $\bullet$ Frank is a Professor for Computational Nuclear Engineering at RWTH Aachen University, Germany.
 He leads a group of two postdoctoral researchers and eight Ph.D. students.
-His research focuses on radiation transport, at the interface of analysis, numerical methods, and related inverse problems.
+His research focuses on radiation transport at the interface of analysis, numerical methods, and related inverse problems.
 Furthermore, the group is involved in several application-oriented projects with engineering groups and companies.
 
 
@@ -548,7 +549,7 @@ Furthermore, the group is involved in several application-oriented projects with
 The PI will be responsible for
 \begin{itemize}[noitemsep]
 \item Mentoring and directing the graduate students conducting research
-\item Ensuring good coding practices
+\item Ensuring good coding practices and compliance with the Data Management Plan
 \item Helping students identify information and venues for presentation and publication of results
 \item Meeting all requirements for reports and deliverables to the sponsor
 \item Managing and administering awarded funds, assisted by the PI's institution
@@ -575,7 +576,7 @@ The following is the project's timeline, identifying the major activities and in
 \begin{itemize}[noitemsep]
 \item Continue quantifying uncertainty associated with $p(s)$: Frank, Vasques
 \item Complete method implementation, conduct associated validation: Slaybaugh, Vasques
-\item Finish identifying impact problem set: Davis, Slaybaugh, Wrenninge
+\item Complete identifying impact problem set: Davis, Slaybaugh, Wrenninge
 \item Begin extending the method to multiscale: Slaybaugh, Vasques, Wrenninge
 \end{itemize}
 \item \textit{Year 3}
@@ -816,7 +817,9 @@ The proposed project will take advantage of the condo-model Savio computing clus
 
 In case interim data storage or smaller computations are required, the group at UCB also has a server with two Intel Xeon Processor E5­2687W v3 3.10GHz 10-core processors (20 total cores), 16$\times$16GB 2133 MHz Memory, and 1.6 TB of solid state memory.
 
-The work done at Zoox, Inc.\ and RWTH Aachen does not require special compute resources or other special facilities. 
+For long term data storage and preservation, UC has the Merritt service, which provides a secure environment for long-term preservation of and access to digital assets of the university.  Merritt uses redundancy to avoid potential single points of failure. The Merritt Storage service keeps two replicas of all content, stored in different data centers: the San Diego Supercomputer Center's Cloud Storage Service, and UCLA's Cloud Archival Storage Service. The Merritt service runs fixity checks continuously across the entire collection to monitor any possible corruption. Merritt 
+
+The work done at Zoox, and RWTH Aachen does not require special compute resources or other special facilities. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -864,14 +867,16 @@ We will post the preprints of all publications from this work on arXiv. Included
 In our software development we will use Doxgen-style code comments such that documentation can be easily generated. 
 
 \subsubsection*{Sharing and preservation}\vspace{-15pt}
-To facilitate the accessibility of our work, we will do all investigatory development in Python and make our small problems available as Jupyter notebooks. We will make as much of our larger scale studies available as Jupyter notebooks as well. Hosting these on GitHub will facilitate accessibility and transparency. All software we use will be free. \vspace{-15pt}
-
-We will archive our data in UC's Merritt system. The Merritt service provides a secure environment for long-term preservation of and access to digital assets of the university.  Merritt uses redundancy to avoid potential single points of failure. The Merritt Storage service keeps two replicas of all content, stored in different data centers: the San Diego Supercomputer Center's Cloud Storage Service, and UCLA's Cloud Archival Storage Service. The Merritt service runs fixity checks continuously across the entire collection to monitor any possible corruption. Merritt will generate a DOI for our data package, which we will include in publication references.
+To facilitate the accessibility of our work, we will do all investigatory development in Python and make our small problems available as Jupyter notebooks. We will make as much of our larger scale studies available as Jupyter notebooks as well. Hosting these on GitHub will facilitate accessibility and transparency. All software we use will be free.
+ 
+We will archive our data in UC's Merritt system, which will generate a DOI for our data package, which we will include in publication references.
+\vspace{-15pt}
 
 \subsubsection*{Protection}\vspace{-15pt}
-As noted, we will refrain from publicly posting proprietary or export controlled information--we will only post relevant data that are publishable. We will not generate personally identifiable information through this work. All of our work will be hosted with appropriate license information, as designated by our home institutions.\vspace{-15pt}
+As noted, we will refrain from publicly posting proprietary or export controlled information--we will only post relevant data that are publishable. We will not generate personally identifiable information through this work. All of our work will be hosted with appropriate license information, as designated by our home institutions.
 
 Part three code and results that are subject to export control restrictions will be stored in an archive or appropriate repository for the laboratory (resource depends on , and restrictions will be put in place that enable those to be accessed only by appropriate research partners. 
+\vspace{-15pt}
  
 \subsubsection*{Rationale}\vspace{-15pt}
 Our plan is intended to serve several goals:
@@ -886,6 +891,6 @@ The Open Source License to be used, if applicable: we will use the Creative Comm
 
 How software can be found and accessed and the length of time the software will be publicly available: as noted, we will link to repositories in our papers and that information will be available for as long as GitHub exists. If the data appears to be imperiled for some reason, we will move it and update the arXiv preprint with the new information. 
 
-How any proprietary 3rd party software or libraries are used in the creation of this software: we will use third party Python libraries such as NumPy and SciPy. We may also modify application-specific software with our new methods. For nuclear engineering, we will likely modify neutron transport software associated with the MOOSE project at Idaho National Laboratory. For atmospheric transport, JPL will modify either internal codes. For image rendering, Zoox, Inc.  will modify their internal software. 
+How any proprietary 3rd party software or libraries are used in the creation of this software: we will use third party Python libraries such as NumPy and SciPy. We may also modify application-specific software with our new methods. For nuclear engineering, we will likely modify neutron transport software associated with the MOOSE project at Idaho National Laboratory. For atmospheric transport, JPL will modify either internal codes. For image rendering, Zoox will modify their internal software. 
  
 \end{document}
