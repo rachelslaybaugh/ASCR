@@ -140,7 +140,7 @@ Situations in which classical homogenization performs poorly include anomalous d
 In this work, we propose to homogenize and model particle transport in these applications using a \textit{non-classical theory}, which can properly capture and preserve important physical aspects of the system \cite{larvas11,davxu14,xudav16,vaslar14b,vas13}.
 
 In this project, we will focus in particular on improving predictive capabilities and increasing spatial resolution of neutron transport calculations in Pebble Bed Reactor (PBR) cores.
-The PBR is a graphite-moderated, helium- or liquid salt-cooled, very-high-temperature (generation IV) reactor concept with highly desirable characteristics.
+The PBR is a graphite-moderated, helium- or liquid salt-cooled, very-high-temperature (generation IV) reactor concept with highly desirable safety and efficiency characteristics.
 These include convenient long-term waste storage, meltdown-proof passive safety, modular construction, on-line refueling, and means to hydrogen production and desalination \cite{htrpm,pbmr,mpbr}.
 
 We will also address the challenges involved in modeling the transport of solar and thermal radiation in atmospheric clouds.
@@ -208,16 +208,16 @@ Now consider a much larger system formed by randomly placing many of these volum
     \caption{Heterogeneous random system formed by many volumes suspended in a void.}
     \label{fig2}
 \end{figure}
-This type of clumpy medium is present in PBRs \cite{fragre11,vaslar14b}, where the volume regions represent the fuel pebbles in the reactor core, with thousands of them piled on top of one another in a random manner.  Real clouds in planetary atmospheres, starting with the Earth's, are constantly churned by turbulent motion, and this generates strong spatial heterogeneity in their local microphysical and hence optical properties.
+This type of clumpy medium is present in PBRs \cite{fragre11,vaslar14b}, where the volume regions represent the fuel pebbles in the reactor core, with thousands of them piled on top of one another in a random manner.  Further, real clouds in planetary atmospheres, starting with the Earth's, are constantly churned by turbulent motion, and this generates strong spatial heterogeneity in their local microphysical and hence optical properties.
 
 It is common to use a homogenization model to address transport problems in this kind of random system.
 This type of approach seeks to develop effective material properties that can be used in the solution of a transport problem for a uniform medium, while achieving an accurate prediction of the flux behavior in the heterogeneous stochastic medium.
 Nevertheless, standard homogenization techniques inherently assume that \cref{eq1} holds in the homogenized material; that is, they assume that the free-path distribution in the uniform medium is given by an exponential (classical transport).
 
 However, the assumption that $\Sigma_t$ is independent of $s$ is not valid when the locations of the volume regions in the system are correlated.
-This correlation leads to a \textit{non-exponential} free-path distribution $p(s)$; we refer this type of transport processes \textit{non-classical}.
+This correlation leads to a \textit{non-exponential} free-path distribution $p(s)$; we refer to this type of transport process as \textit{non-classical}.
 The classical homogenization approaches used to address these problems are not capable of preserving the true non-exponential attenuation law that arises in these heterogeneous systems.
-This leads to unreliable estimates of the particle flux in these applications, due to important physical quantities being poorly approximated.
+The homogenization approach therefore leads to unreliable estimates of the particle flux in these applications because important physical quantities are poorly approximated.
 
 The challenge is to develop and implement a methodology that (i) determines the true free-path distribution in these systems, and (ii) uses that information in a model that preserves the physics of these stochastic processes.
 To do that, we will use a novel theory specifically developed to address non-classical transport.
@@ -270,7 +270,7 @@ A similar kinetic equation with free-path as an independent variable has been ri
 We have already shown that the simplified P$_1$ (SP$_1$, or classical diffusion), SP$_2$, and SP$_3$ approximations to the \textit{classical} linear Boltzmann equation can be represented exactly by a non-classical transport equation for an infinite, homogeneous medium \cite{frakry15}.
 Similarly, the non-classical transport equation can also exactly represent the  \textit{non-classical diffusion equation} \cite{vas16}.
 Moreover, one can combine moment methods and the Fourier transform to derive fractional diffusion equations from the non-classical transport equation \cite{frasun16}.
-This is key to model radiative transfer problems in atmospheric clouds, where generalized (a.k.a. anomalous) diffusion arises due to long-tailed free-path distributions \cite{davmar97,schetal06}.
+This is key to modeling radiative transfer problems in atmospheric clouds, where generalized (a.k.a.\ anomalous) diffusion arises due to long-tailed free-path distributions \cite{davmar97,schetal06}.
 
 With respect to nuclear reactor applications, the non-classical theory has been shown to be more accurate than classical approaches in certain types of one-dimensional (1D) transport problems \cite{vaskry16}.
 \Cref{fig3} depicts the ensemble-averaged scalar fluxes obtained with non-classical and classical (atomic mix) approaches in a 1D random periodic system consisting
@@ -384,7 +384,7 @@ In the later limit, the classic exponential law in \cref{eq1} is recovered.
 In the former one, the mean-free-path diverges and this is not seen in the observations \cite{schetal06}.
 This choice of $p(s)$ defines the generalized radiative transfer (GRT) model \cite{davxu14,xudav16} (previously called ``anomalous'' or ``L\'evy'' transport \cite{davmar97}).
 \Cref{fig4} shows a series of GRT particle random walks in a medium with a common $\langle\Sigma_t\rangle$ but $a$ decreasing from $\infty$ to 1.2.
-We notice the similarity of the clusters of small steps that would occur in localized opaque regions, i.e., isolated clouds, and the increasingly large jumps between these clusters/clouds as the tail of the selected $p(s)$ distributions becomes longer.
+We notice the similarity of the clusters of small steps that would occur in localized opaque regions, i.e.\ isolated clouds, and the increasingly large jumps between these clusters/clouds as the tail of the selected $p(s)$ distributions becomes longer.
 \begin{figure}[hbt]
     \centering
     \begin{subfigure}{0.49\textwidth}
@@ -395,7 +395,7 @@ We notice the similarity of the clusters of small steps that would occur in loca
         \centering
         \includegraphics[width=\textwidth]{fig4b}
     \end{subfigure}
-    \caption{\textbf{Left}: 2D unbounded random walks, 100 steps each, all starting in the same direction at the origin of the axes, by isotropically scattered particles following $p_a(s)$ with the choices of $a$ called out in the text. \textbf{Right}: Log plots of $p(s)$ for the traces plotted in the left panel.}\label{fig4}
+    \caption{\textbf{Left}: 2D unbounded random walks of 100 steps each, all starting in the same direction at the origin of the axes, by isotropically scattered particles following $p_a(s)$ with the choices of $a$ called out in the text. \textbf{Right}: Log plots of $p(s)$ for the traces plotted in the left panel.}\label{fig4}
 \end{figure}
 
 These preliminary numerical results offer a strong case for the non-classical theory, and justify the efforts to develop and improve related tools.
@@ -411,10 +411,11 @@ Although there are a few particular cases in which an analytical expression for 
 \subsection{Objectives}
 
 This project will focus on advancing the mathematical aspects of the non-classical theory, and on developing a set of computational tools to solve general, 3D non-classical transport problems in real-world applications.
-To achieve that, we will build upon the results presented in the last section to expand and improve the mathematical and computational aspects of the non-classical theory.
-Moreover, the interdisciplinary scope of the project combined to the different areas of expertise of the team will create perfect conditions to perform cutting-edge research, fostering ideas and driving innovations.
+To achieve this, we will build upon the results presented in the last section--expanding and improving the mathematical and computational aspects of the non-classical theory.
+Moreover, the interdisciplinary scope of the project, combined with the different areas of expertise of the team, will create perfect conditions to perform cutting-edge research, fostering ideas and driving innovation.
 
 We will leverage computational techniques currently used in CG rendering (cloud modeling) to create a tool that will allow us to numerically estimate the $p(s)$ in general 3D stochastic and heterogeneous systems.
+% we sometimes use general, 3D and sometimes general 3D. Which do we want?
 This will enable us to solve the full non-classical transport equation and study its performance in different scenarios, while addressing a number of current challenges in the areas of applied mathematics and engineering.
 
 One of the main features of this approach will be the ability to refine the resolution of the free-path distribution in different regions of interest, allowing us to accurately solve coupled multiscale transport problems in highly heterogeneous systems.
@@ -445,24 +446,26 @@ This will be done by performing a sensitivity analysis of the non-classical tran
 %-----------------------------
 $\bullet$ \underline{Choosing the Transport Solver}
 
-Once we have developed the algorithm to attain $p(s)$, we need to introduce it into a code to solve the 3D non-classical transport equation.
+Once we have developed the algorithm to attain $p(s)$, we will introduce it into a code to solve the 3D non-classical transport equation.
 The choice of solver to use--deterministic or Monte Carlo--is of vital importance for the success of the project; thus, we will thoroughly weigh the pros and cons of each approach.
 
-To do that, we will write preliminary versions of the codes for each solver and apply them to simple transport problems.
+To do that, we will write preliminary versions of the method for each solver and apply them to simple transport problems.
 We will evaluate the results and carry out a technical assessment, taking into account the accuracy, cost-efficiency, and potential pitfalls identified for each solver, as well as other foreseen issues as we move forward.
+% perhaps we need to specify, or at least I don't understand, if we're inmplenting these in existing large-scale codes or in our own little toy codes?
 
 First, we will test the non-classical codes by solving \textit{classical} transport problems in homogeneous and heterogeneous systems; this will allow us to validate the methods using standard (classical) solution techniques.
 Next, we will solve non-classical problems in specific ``toy'' models, for which either analytical or benchmark solutions exist for a reliable comparison.
 We will then have enough the data to make an informed decision.
-If early in this process it becomes clear that one of the models strongly outperforms the other, we shall pick that method without having to complete this evaluation.
+If it becomes clear early in this process that one of the models strongly outperforms the other, we shall pick that method without completing this evaluation.
 
 %-----------------------------
 %-----------------------------
 $\bullet$ \underline{Implementing and Validating the Method}
 
 Having chosen the transport solver, we can proceed to implement the full computational model.
+% It's unclear how we're doing this and in what software...again, our own codes or in production-level software? research software? does it exist?
 As we move from the basic transport problems addressed in the previous task to more complex non-classical problems, we need to use different approaches to validate the proposed method.
-These will depend on the type of applications/systems being addressed, and will include any combination of benchmark solutions, Monte Carlo simulations of the random system (not homogenized), and experimental results.
+These will depend on the type of applications/systems being addressed, and will include a combination of benchmark solutions, Monte Carlo simulations of the random system (not homogenized), and experimental results.
 
 We will start by focusing on simple (but important) non-classical problems in real-world climate modeling/remote sensing applications, relying on the team's expertise in this area to choose the best validation technique.
 We will then test and validate the proposed model in an expanded set of applications, including other areas in science and engineering where transport in 3D stochastic spatial structures is important.
@@ -475,17 +478,17 @@ We will use the set of tools developed to numerically validate these new results
 %-----------------------------
 $\bullet$ \underline{Extending the Method to Multiscale Problems}
 
-After the successful implementation and validation of the proposed model, we will extend the capabilities developed up to this point to create free-path distributions that can accurately capture highly-resolved heterogeneities in small length scales.
+After the successful implementation and validation of the proposed model, we will extend the capabilities developed to create free-path distributions that can accurately capture highly-resolved heterogeneities in small length scales.
 This will enable us to ``fine-tune'' the $p(s)$ at different regions of the system, allowing us to effectively describe the non-classical transport process as a multiscale problem.
 
-This gives us a set of coupled multiscale transport equations in the larger system that can be solved without the cost of fine resolution for the $p(s)$ everywhere, while still preserving significant information where needed.
+This gives us a set of coupled multiscale transport equations in the larger system that can be solved without the cost of having a fine resolution for the $p(s)$ everywhere, while still preserving significant information where needed.
 We will perform a thorough sensitivity analysis and will broaden the uncertainty quantification approach used in the first task to include this extended, multiscale homogenization of $p(s)$.
 
 %-----------------------------
 %-----------------------------
 $\bullet$ \underline{Measuring Impact}
 
-We will measure the impact of the proposed model by analyzing its performance (accuracy, time, etc.) compared to current homogenization techniques and other approaches than homogenization.
+We will measure the impact of the proposed model by analyzing its performance (accuracy, time, etc.) compared to current homogenization techniques and approaches other than homogenization.
 We will investigate how the choice of the system affects its performance, and what kind of real-world applications are best suited to the non-classical theory.
 We will also determine how efficiently this approach models multiscale and multiresolution problems.
 
@@ -497,6 +500,7 @@ We will also determine how efficiently this approach models multiscale and multi
 The first deliverable from this project will be a high-quality set of mathematical and computational tools to address non-classical transport problems in general 3D random systems.
 These tools will have the capability to accurately and efficiently solve coupled multiscale transport problems in systems with very strong heterogeneities.
 They will also contain an approach to quantify the uncertainties that emerge from the non-classical homogenization.
+% new software? existing software? small? large?
 
 The second deliverable will consist of a series of impact studies on relevant application problems, which will become a powerful demonstration platform for our innovative methods in theoretical and computational transport.
 At a minimum, we will pursue:
@@ -517,7 +521,7 @@ Furthermore, we will focus in identifying how the improvements obtained with thi
 This research is accomplishable because of the technical quality of the proposed work and the deep experience and strong capability of the applicant team.
 Our project team is strongly interdisciplinary, formed by experts in the different areas of the proposed scope:
 
-$\bullet$ Slaybaugh is an Assistant Professor of Nuclear Engineering at UC Berkeley, with experience in deterministic and Monte Carlo radiation transport codes, high-quality software development, and supercomputing.
+$\bullet$ Slaybaugh is an Assistant Professor of Nuclear Engineering at UC Berkeley, with experience in deterministic and Monte Carlo radiation transport methods, high-quality software development and reproducibility, and high-performance supercomputing.
 Her research program is based in computational methods applied to existing and advanced nuclear reactors, nuclear non-proliferation and security, and shielding applications.
 
 $\bullet$ Vasques is a Project Scientist at UC Berkeley, with experience in mathematical and computational modeling of transport and diffusion processes, homogenization methods, variance reduction techniques, and stochastic processes.
@@ -526,7 +530,7 @@ His main area of research is based on modeling transport processes in stochastic
 $\bullet$ Davis is a Caltech Research Scientist working for NASA's Jet Propulsion Laboratory.
 He is a leading expert in 3D radiative transfer (RT) in atmospheric clouds and cloud fields, covering theoretical, computational and observational aspects.
 His current interests are in the application of the ``generalized'' RT model to practical problems posed by unresolved fine-scale spatial and spectral variabilities.
-In parallel, he is involved in collaborative efforts in 3D cloud reconstruction based on multi-angle/multi-pixel data, efficient numerical 3D RT modeling and recent advances in inverse problem theory.
+In parallel, he is involved in collaborative efforts in 3D cloud reconstruction based on multi-angle/multi-pixel data, efficient numerical 3D RT modeling, and recent advances in inverse problem theory.
 
 $\bullet$ Wrenninge is a film industry veteran working on synthetic imagery for training and testing of neural networks at Zoox, a Menlo Park start-up developing Level 4 autonomous vehicles.
 He is an expert in computer graphics for film and photorealistic image production, with a specialization in rendering of participating media.
@@ -534,7 +538,7 @@ Before joining Zoox, he was a Principal Engineer at Pixar Animation Studios, whe
 
 $\bullet$ Frank is a Professor for Computational Nuclear Engineering at RWTH Aachen University, Germany.
 He leads a group of two postdoctoral researchers and eight Ph.D. students.
-His research focuses on radiation transport, at the interface of analysis, numerical methods, and related inverse problems.
+His research focuses on radiation transport at the interface of analysis, numerical methods, and related inverse problems.
 Furthermore, the group is involved in several application-oriented projects with engineering groups and companies.
 
 
@@ -545,7 +549,7 @@ Furthermore, the group is involved in several application-oriented projects with
 The PI will be responsible for
 \begin{itemize}[noitemsep]
 \item Mentoring and directing the graduate students conducting research
-\item Ensuring good coding practices
+\item Ensuring good coding practices and compliance with the Data Management Plan
 \item Helping students identify information and venues for presentation and publication of results
 \item Meeting all requirements for reports and deliverables to the sponsor
 \item Managing and administering awarded funds, assisted by the PI's institution
@@ -572,7 +576,7 @@ The following is the project's timeline, identifying the major activities and in
 \begin{itemize}[noitemsep]
 \item Continue quantifying uncertainty associated with $p(s)$: Frank, Vasques
 \item Complete method implementation, conduct associated validation: Slaybaugh, Vasques
-\item Finish identifying impact problem set: Davis, Slaybaugh, Wrenninge
+\item Complete identifying impact problem set: Davis, Slaybaugh, Wrenninge
 \item Begin extending the method to multiscale: Slaybaugh, Vasques, Wrenninge
 \end{itemize}
 \item \textit{Year 3}
@@ -809,7 +813,14 @@ London: Chapman \& Hall (2003).
 {\bf APPENDIX 4 -- FACILITIES \& OTHER RESOURCES}
 \end{center}
 
-The proposed project will take advantage of the condo-model Savio computing cluster available at Berkeley (\href{http://research-it.berkeley.edu/services/high-performance-computing}{http://research-it.berkeley.edu/services/high-performance-computing}). The Berkeley personnel in this proposal have 24 nodes, each consisting of Dual Ivybridge E5-2670v2 2.5Ghz 10-core processors (480 total cores), 64GB 1866 Mhz Memory, FDR Infiniband HCA, on this machine. They also have the ability to access the full machine, which has 331 compute nodes. These computing resources will facilitate the fast simulations required for this project. These resources will be available throughout the duration of this project and will be adequate for the computing to be conducted in this project.
+The proposed project will take advantage of the condo-model Savio computing cluster available at Berkeley (\href{http://research-it.berkeley.edu/services/high-performance-computing}{http://research-it.berkeley.edu/services/high-performance-computing}). The Berkeley personnel in this proposal have 24 nodes, each consisting of Dual Ivybridge E5-2670v2 2.5Ghz 10-core processors (480 total cores), 64GB 1866 Mhz Memory, FDR Infiniband HCA, on this machine. They also have the ability to access the full machine, which has 331 compute nodes. These computing resources will facilitate the fast simulations required for this project. These resources will be available throughout the duration of this project and will be adequate for the computing to be conducted in this project. 
+
+In case interim data storage or smaller computations are required, the group at UCB also has a server with two Intel Xeon Processor E5­2687W v3 3.10GHz 10-core processors (20 total cores), 16$\times$16GB 2133 MHz Memory, and 1.6 TB of solid state memory.
+
+For long term data storage and preservation, UC has the Merritt service, which provides a secure environment for long-term preservation of and access to digital assets of the university.  Merritt uses redundancy to avoid potential single points of failure. The Merritt Storage service keeps two replicas of all content, stored in different data centers: the San Diego Supercomputer Center's Cloud Storage Service, and UCLA's Cloud Archival Storage Service. The Merritt service runs fixity checks continuously across the entire collection to monitor any possible corruption. Merritt 
+
+The work done at Zoox, and RWTH Aachen does not require special compute resources or other special facilities. 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -841,25 +852,31 @@ No equipment beyond the facilities listed in the \textbf{Appendix 4} (Facilities
 \subsubsection*{Data types and sources}\vspace{-15pt}
 There are a few steps in our work:\vspace{-10pt}
 \begin{enumerate}
-\item method investigation and development\vspace{-10pt}
-\item larger-scale method implementation\vspace{-10pt}
-\item impact measurement\vspace{-5pt}
+\item Method investigation and development (numerically determining $p(s)$, choosing the transport solver, and implementing and validating the method), which will be conducted in Python.\vspace{-10pt}
+\item Larger-scale method implementation, which will be conducted in a mix of Python and application-specific software.\vspace{-10pt}
+\item Impact measurement, which will be done using the software developed in Step 2.\vspace{-5pt}
 \end{enumerate}
 
-We will make all data generated in steps 1 and 2 publicly available by hosting our developed software, test suite, and problem sets on a public GitHub repository. Given the nature of the work, this is the easiest and least expensive way to not only share tools between collaborators at differing institutions, but also to make our work transparent and accessible to the wider community. 
+We will make all data generated in steps 1 and 2 publicly available by hosting our developed software (Python), test suite (Python), and problem sets (Python) on a public GitHub repository. Given the nature of the work, this is the easiest and least expensive way to not only share tools between collaborators at differing institutions, but also to make our work transparent and accessible to the wider community. 
 
 Part 3 may require using software or problem specifications that are not all publicly available because of export control issues (e.g. use of nuclear-specific software and reactor specifications). We will endeavor to use tools that are as open as possible. In the cases where software or materials must remain closed to at least some communities, we will manage our work in a private repository. We will make published data sets available on the public repository (see discussion of publications below). We will also make materials available to anyone who does have appropriate licenses. 
 
-We will post the preprints of all publications from this work on arXiv. Included in our publications will be a link to the portion of our repository containing (excepting the applicable limitations above) all of the data used to generate each plot, scripts to generate plots, and input files used to generate the data. We will also include a link to the software we used. With this information, it should be possible to reproduce the results in the paper. We will note versions of items used (e.g.\ Python 2.7.12 and repository commit index for our software) to facilitate reproducibility.\vspace{-15pt}
+We will post the preprints of all publications from this work on arXiv. Included in our publications will be a link to the portion of our repository containing (excepting the applicable limitations above) all of the data used to generate each plot, scripts to generate plots, and Python input files used to generate the data--all of which will be text-based data. For example, the We will also include a link to the software we used. With this information, it should be possible to reproduce the results in the paper. We will note versions of items used (e.g.\ Python 2.7.12 and repository commit index for our software) to facilitate reproducibility.\vspace{-15pt}
 
 \subsubsection*{Content and format}\vspace{-15pt}
 In our software development we will use Doxgen-style code comments such that documentation can be easily generated. 
 
-Sharing and preservation
-To facilitate the accessibility of our work, we will do all investigatory development in Python and make our small problems available as Jupyter notebooks. We will make as much of our larger scale studies available as Jupyter notebooks as well. Hosting these on GitHub will facilitate accessibility and transparency. All software we use will be free. \vspace{-15pt}
+\subsubsection*{Sharing and preservation}\vspace{-15pt}
+To facilitate the accessibility of our work, we will do all investigatory development in Python and make our small problems available as Jupyter notebooks. We will make as much of our larger scale studies available as Jupyter notebooks as well. Hosting these on GitHub will facilitate accessibility and transparency. All software we use will be free.
+ 
+We will archive our data in UC's Merritt system, which will generate a DOI for our data package, which we will include in publication references.
+\vspace{-15pt}
 
 \subsubsection*{Protection}\vspace{-15pt}
-As noted, we will refrain from publicly posting proprietary or export controlled information--we will only post relevant data that are publishable. We will not generate personally identifiable information through this work. All of our work will be hosted with appropriate license information, as designated by our home institutions.\vspace{-15pt}
+As noted, we will refrain from publicly posting proprietary or export controlled information--we will only post relevant data that are publishable. We will not generate personally identifiable information through this work. All of our work will be hosted with appropriate license information, as designated by our home institutions.
+
+Part three code and results that are subject to export control restrictions will be stored in an archive or appropriate repository for the laboratory (resource depends on , and restrictions will be put in place that enable those to be accessed only by appropriate research partners. 
+\vspace{-15pt}
  
 \subsubsection*{Rationale}\vspace{-15pt}
 Our plan is intended to serve several goals:
@@ -870,11 +887,10 @@ Our plan is intended to serve several goals:
 \end{enumerate}\vspace{-15pt}
 
 \subsubsection*{Software \& Codes}\vspace{-15pt}
-The Open Source License to be used, if applicable: we will use the Creative Commons Attribution license for text documents and the MIT license for software. 
-If executable versions of the software will also be released, and if so what format will be used: most development work will be in Python, which does not require an executable. We will not be able to generally distribute the application-specific software we will modify. In those cases the host institutions will distribute accepted code modifications through their own software release processes.
+The Open Source License to be used, if applicable: we will use the Creative Commons Attribution license for text documents (papers and data) and the MIT license for software and scripts. If executable versions of the software will also be released, and if so what format will be used: most development work will be in Python, which does not require an executable. We will not be able to generally distribute the application-specific software we will modify. In those cases the host institutions will distribute accepted code modifications through their own software release processes.
 
 How software can be found and accessed and the length of time the software will be publicly available: as noted, we will link to repositories in our papers and that information will be available for as long as GitHub exists. If the data appears to be imperiled for some reason, we will move it and update the arXiv preprint with the new information. 
 
-How any proprietary 3rd party software or libraries are used in the creation of this software: we will use third party Python libraries such as NumPy and SciPy. We may also modify application-specific software with our new methods. For nuclear engineering, we will likely modify neutron transport software associated with the MOOSE project at Idaho National Laboratory. For atmospheric transport, JPL will modify either internal codes. For image rendering, Zoox, Inc.  will modify their internal software. 
+How any proprietary 3rd party software or libraries are used in the creation of this software: we will use third party Python libraries such as NumPy and SciPy. We may also modify application-specific software with our new methods. For nuclear engineering, we will likely modify neutron transport software associated with the MOOSE project at Idaho National Laboratory. For atmospheric transport, JPL will modify either internal codes. For image rendering, Zoox will modify their internal software. 
  
 \end{document}
