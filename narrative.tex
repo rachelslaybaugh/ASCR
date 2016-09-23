@@ -135,7 +135,7 @@ Situations in which classical homogenization performs poorly include anomalous d
 In this work, we propose to homogenize and model particle transport in these applications using a \textit{non-classical theory}, which can properly capture and preserve important physical aspects of the system \cite{larvas11,davxu14,xudav16,vaslar14b,vas13}.
 
 In this project, we will focus in particular on improving predictive capabilities and increasing spatial resolution of neutron transport calculations in Pebble Bed Reactor (PBR) cores.
-The PBR is a graphite-moderated, helium- or liquid salt-cooled, very-high-temperature (generation IV) reactor concept with highly desirable characteristics.
+The PBR is a graphite-moderated, helium- or liquid salt-cooled, very-high-temperature (generation IV) reactor concept with highly desirable safety and efficiency characteristics.
 These include convenient long-term waste storage, meltdown-proof passive safety, modular construction, on-line refueling, and means to hydrogen production and desalination \cite{htrpm,pbmr,mpbr}.
 
 We will also address the challenges involved in modeling the transport of solar and thermal radiation in atmospheric clouds.
@@ -203,16 +203,16 @@ Now consider a much larger system formed by randomly placing many of these volum
     \caption{Heterogeneous random system formed by many volumes suspended in a void.}
     \label{fig2}
 \end{figure}
-This type of clumpy medium is present in PBRs \cite{fragre11,vaslar14b}, where the volume regions represent the fuel pebbles in the reactor core, with thousands of them piled on top of one another in a random manner.  Real clouds in planetary atmospheres, starting with the Earth's, are constantly churned by turbulent motion, and this generates strong spatial heterogeneity in their local microphysical and hence optical properties.
+This type of clumpy medium is present in PBRs \cite{fragre11,vaslar14b}, where the volume regions represent the fuel pebbles in the reactor core, with thousands of them piled on top of one another in a random manner.  Further, real clouds in planetary atmospheres, starting with the Earth's, are constantly churned by turbulent motion, and this generates strong spatial heterogeneity in their local microphysical and hence optical properties.
 
 It is common to use a homogenization model to address transport problems in this kind of random system.
 This type of approach seeks to develop effective material properties that can be used in the solution of a transport problem for a uniform medium, while achieving an accurate prediction of the flux behavior in the heterogeneous stochastic medium.
 Nevertheless, standard homogenization techniques inherently assume that \cref{eq1} holds in the homogenized material; that is, they assume that the free-path distribution in the uniform medium is given by an exponential (classical transport).
 
 However, the assumption that $\Sigma_t$ is independent of $s$ is not valid when the locations of the volume regions in the system are correlated.
-This correlation leads to a \textit{non-exponential} free-path distribution $p(s)$; we refer this type of transport processes \textit{non-classical}.
+This correlation leads to a \textit{non-exponential} free-path distribution $p(s)$; we refer to this type of transport process as \textit{non-classical}.
 The classical homogenization approaches used to address these problems are not capable of preserving the true non-exponential attenuation law that arises in these heterogeneous systems.
-This leads to unreliable estimates of the particle flux in these applications, due to important physical quantities being poorly approximated.
+The homogenization approach therefore leads to unreliable estimates of the particle flux in these applications because important physical quantities are poorly approximated.
 
 The challenge is to develop and implement a methodology that (i) determines the true free-path distribution in these systems, and (ii) uses that information in a model that preserves the physics of these stochastic processes.
 To do that, we will use a novel theory specifically developed to address non-classical transport.
@@ -265,7 +265,7 @@ A similar kinetic equation with free-path as an independent variable has been ri
 We have already shown that the simplified P$_1$ (SP$_1$, or classical diffusion), SP$_2$, and SP$_3$ approximations to the \textit{classical} linear Boltzmann equation can be represented exactly by a non-classical transport equation for an infinite, homogeneous medium \cite{frakry15}.
 Similarly, the non-classical transport equation can also exactly represent the  \textit{non-classical diffusion equation} \cite{vas16}.
 Moreover, one can combine moment methods and the Fourier transform to derive fractional diffusion equations from the non-classical transport equation \cite{frasun16}.
-This is key to model radiative transfer problems in atmospheric clouds, where generalized (a.k.a. anomalous) diffusion arises due to long-tailed free-path distributions \cite{davmar97,schetal06}.
+This is key to modeling radiative transfer problems in atmospheric clouds, where generalized (a.k.a.\ anomalous) diffusion arises due to long-tailed free-path distributions \cite{davmar97,schetal06}.
 
 With respect to nuclear reactor applications, the non-classical theory has been shown to be more accurate than classical approaches in certain types of one-dimensional (1D) transport problems \cite{vaskry16}.
 \Cref{fig3} depicts the ensemble-averaged scalar fluxes obtained with non-classical and classical (atomic mix) approaches in a 1D random periodic system consisting
@@ -379,7 +379,7 @@ In the later limit, the classic exponential law in \cref{eq1} is recovered.
 In the former one, the mean-free-path diverges and this is not seen in the observations \cite{schetal06}.
 This choice of $p(s)$ defines the generalized radiative transfer (GRT) model \cite{davxu14,xudav16} (previously called ``anomalous'' or ``L\'evy'' transport \cite{davmar97}).
 \Cref{fig4} shows a series of GRT particle random walks in a medium with a common $\langle\Sigma_t\rangle$ but $a$ decreasing from $\infty$ to 1.2.
-We notice the similarity of the clusters of small steps that would occur in localized opaque regions, i.e., isolated clouds, and the increasingly large jumps between these clusters/clouds as the tail of the selected $p(s)$ distributions becomes longer.
+We notice the similarity of the clusters of small steps that would occur in localized opaque regions, i.e.\ isolated clouds, and the increasingly large jumps between these clusters/clouds as the tail of the selected $p(s)$ distributions becomes longer.
 \begin{figure}[hbt]
     \centering
     \begin{subfigure}{0.49\textwidth}
@@ -390,7 +390,7 @@ We notice the similarity of the clusters of small steps that would occur in loca
         \centering
         \includegraphics[width=\textwidth]{fig4b}
     \end{subfigure}
-    \caption{\textbf{Left}: 2D unbounded random walks, 100 steps each, all starting in the same direction at the origin of the axes, by isotropically scattered particles following $p_a(s)$ with the choices of $a$ called out in the text. \textbf{Right}: Log plots of $p(s)$ for the traces plotted in the left panel.}\label{fig4}
+    \caption{\textbf{Left}: 2D unbounded random walks of 100 steps each, all starting in the same direction at the origin of the axes, by isotropically scattered particles following $p_a(s)$ with the choices of $a$ called out in the text. \textbf{Right}: Log plots of $p(s)$ for the traces plotted in the left panel.}\label{fig4}
 \end{figure}
 
 These preliminary numerical results offer a strong case for the non-classical theory, and justify the efforts to develop and improve related tools.
@@ -406,10 +406,11 @@ Although there are a few particular cases in which an analytical expression for 
 \subsection{Objectives}
 
 This project will focus on advancing the mathematical aspects of the non-classical theory, and on developing a set of computational tools to solve general, 3D non-classical transport problems in real-world applications.
-To achieve that, we will build upon the results presented in the last section to expand and improve the mathematical and computational aspects of the non-classical theory.
-Moreover, the interdisciplinary scope of the project combined to the different areas of expertise of the team will create perfect conditions to perform cutting-edge research, fostering ideas and driving innovations.
+To achieve this, we will build upon the results presented in the last section--expanding and improving the mathematical and computational aspects of the non-classical theory.
+Moreover, the interdisciplinary scope of the project, combined with the different areas of expertise of the team, will create perfect conditions to perform cutting-edge research, fostering ideas and driving innovation.
 
 We will leverage computational techniques currently used in CG rendering (cloud modeling) to create a tool that will allow us to numerically estimate the $p(s)$ in general 3D stochastic and heterogeneous systems.
+% we sometimes use general, 3D and sometimes general 3D. Which do we want?
 This will enable us to solve the full non-classical transport equation and study its performance in different scenarios, while addressing a number of current challenges in the areas of applied mathematics and engineering.
 
 One of the main features of this approach will be the ability to refine the resolution of the free-path distribution in different regions of interest, allowing us to accurately solve coupled multiscale transport problems in highly heterogeneous systems.
