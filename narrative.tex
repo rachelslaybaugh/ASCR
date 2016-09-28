@@ -455,7 +455,6 @@ The choice of solver to use--deterministic or Monte Carlo--is of vital importanc
 
 To do that, we will write preliminary versions of the method for each solver and apply them to simple transport problems.
 We will evaluate the results and carry out a technical assessment, taking into account the accuracy, cost-efficiency, and potential pitfalls identified for each solver, as well as other foreseen issues as we move forward.
-% perhaps we need to specify, or at least I don't understand, if we're inmplenting these in existing large-scale codes or in our own little toy codes?
 
 First, we will test the non-classical codes by solving \textit{classical} transport problems in homogeneous and heterogeneous systems; this will allow us to validate the methods using standard (classical) solution techniques.
 Next, we will solve non-classical problems in specific ``toy'' models, for which either analytical or benchmark solutions exist for a reliable comparison.
@@ -467,7 +466,6 @@ If it becomes clear early in this process that one of the models strongly outper
 $\bullet$ \underline{Implementing and Validating the Method}
 
 Having chosen the transport solver, we can proceed to implement the full computational model.
-% It's unclear how we're doing this and in what software...again, our own codes or in production-level software? research software? does it exist?
 As we move from the basic transport problems addressed in the previous task to more complex non-classical problems, we need to use different approaches to validate the proposed method.
 These will depend on the type of applications/systems being addressed, and will include a combination of benchmark solutions, Monte Carlo simulations of the random system (not homogenized), and experimental results.
 
@@ -504,7 +502,6 @@ We will also determine how efficiently this approach models multiscale and multi
 The first deliverable from this project will be a high-quality set of mathematical and computational tools to address non-classical transport problems in general, 3D random systems.
 These tools will have the capability to accurately and efficiently solve coupled multiscale transport problems in systems with very strong heterogeneities.
 They will also contain an approach to quantify the uncertainties that emerge from the non-classical homogenization.
-% new software? existing software? small? large?
 
 The second deliverable will consist of a series of impact studies on relevant application problems, which will become a powerful demonstration platform for our innovative methods in theoretical and computational transport.
 At a minimum, we will pursue:
@@ -823,7 +820,9 @@ In case interim data storage or smaller computations are required, the group at 
 
 For long term data storage and preservation, UC has the Merritt service, which provides a secure environment for long-term preservation of and access to digital assets of the university.  Merritt uses redundancy to avoid potential single points of failure. The Merritt Storage service keeps two replicas of all content, stored in different data centers: the San Diego Supercomputer Center's Cloud Storage Service, and UCLA's Cloud Archival Storage Service. The Merritt service runs fixity checks continuously across the entire collection to monitor any possible corruption. Merritt 
 
-The work done at Zoox, and RWTH Aachen does not require special compute resources or other special facilities. 
+Jet Propulsion Laboratory and Zoox has their own small machines and will perform larger computations on Berkeley's computers if necessary. 
+
+RWTH Aachen has access to machines at RWTH and the Research Center in J\"{u}lich. Further, they own some smaller machines, including one with 48 cores and 1 TB of memory.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -857,35 +856,32 @@ No equipment beyond the facilities listed in the \textbf{Appendix 4} (Facilities
 \subsubsection*{Data types and sources}\vspace{-15pt}
 There are a few steps in our work:\vspace{-5pt}
 \begin{enumerate}
-<<<<<<< HEAD
-\item Method investigation and development (numerically determining $p(s)$, choosing the transport solver, and implementing and validating the method), which will be conducted in Python.\vspace{-5pt}
-\item Larger-scale method implementation, which will be conducted in a mix of Python and application-specific software.\vspace{-5pt}
-=======
-\item Method investigation and development (numerically determining $p(s)$, choosing the transport solver, and implementing and validating the method), which will be conducted in Python.\vspace{-10pt}
-\item Larger-scale method implementation, which will be conducted in a mix of Python and application-specific software.\vspace{-10pt}
->>>>>>> 1c790ef64cae0b9ccce8ea1e189d9e5458756e13
-\item Impact measurement, which will be done using the software developed in Step 2.\vspace{-5pt}
+\item Method investigation and development: numerically determining $p(s)$, choosing the transport solver, and implementing and validating the method\vspace{-5pt}
+\item Larger-scale method implementation\vspace{-5pt}
+\item Impact measurement\vspace{-5pt}
 \end{enumerate}
 
-We will make all data generated in steps 1 and 2 publicly available by hosting our developed software (Python), test suite (Python), and problem sets (Python) on a public GitHub repository. Given the nature of the work, this is the easiest and least expensive way to not only share tools between collaborators at differing institutions, but also to make our work transparent and accessible to the wider community. 
+Steps 1 and 2 will be conducted in Python, C++, and Houdini. Python and C++ (along with the compilers we will use) are free. Houdini (www.sidefx.com) is commercial and closed-source, but we will not depend on this software for anything crucial to data sharing (will be used for prototyping). However, there is educational pricing for \$75/year if this becomes applicable. The CG work will also use Eigen (open source), Field3D (open source), TBB (open source), OpenImageIO (open source), and Bazel (build system).
 
-Part 3 may require using software or problem specifications that are not all publicly available because of export control issues (e.g. use of nuclear-specific software and reactor specifications). We will endeavor to use tools that are as open as possible. In the cases where software or materials must remain closed to at least some communities, we will manage our work in a private repository. We will make published data sets available on the public repository (see discussion of publications below). We will also make materials available to anyone who does have appropriate licenses. 
+We will make all data generated in steps 1 and 2 publicly available by hosting our developed software, test suites, and problem sets on a public GitHub repository. These items will all be in formats appropriate to the items in the previous paragraph. Given the nature of the work, this is the easiest and least expensive way to not only share tools between collaborators at differing institutions, but also to make our work transparent and accessible to the wider community. 
 
-We will post the preprints of all publications from this work on arXiv. Included in our publications will be a link to the portion of our repository containing (excepting the applicable limitations above) all of the data used to generate each plot, scripts to generate plots, and Python input files used to generate the data--all of which will be text-based data. For example, the We will also include a link to the software we used. With this information, it should be possible to reproduce the results in the paper. We will note versions of items used (e.g.\ Python 2.7.12 and repository commit index for our software) to facilitate reproducibility.\vspace{-15pt}
+Step 3 will again be in Python or C++, and the CG portions will use the libraries mentioned above. The main difference is that the software will be larger, and we may incorporate our methods into existing software instead of only writing our own, new codes. 
+
+We will make the inputs, problems specifications, and obtained output for step 3 available in this same gitHub repository. The input files will be text-based, and output files will be text-based (nuclear and atmospheric), and images (CG). 
+
+We will post the preprints of all publications from this work on arXiv. Included in our publications will be a link to the portion of our repository containing all of the data used to generate each plot, scripts to generate plots, and input files used to generate the data--all of which will be text-based data. We will also include a link to the software we used and a DOI number for our output data (discussed below). With this information, it should be possible to reproduce the results in the papers. We will note versions of items used (e.g.\ Python 2.7.12 and repository commit index for our software) to facilitate reproducibility.\vspace{-15pt}
 
 \subsubsection*{Content and format}\vspace{-15pt}
 In our software development we will use Doxgen-style code comments such that documentation can be easily generated. 
 
 \subsubsection*{Sharing and preservation}\vspace{-15pt}
-To facilitate the accessibility of our work, we will do all investigatory development in Python and make our small problems available as Jupyter notebooks. We will make as much of our larger scale studies available as Jupyter notebooks as well. Hosting these on GitHub will facilitate accessibility and transparency. All software we use will be free.
+To facilitate the accessibility of our work, we will do investigatory development in Python and make our small problems available as Jupyter notebooks. We will make as much of our larger scale studies available as Jupyter notebooks as well. Hosting these on GitHub will facilitate accessibility and transparency. All software we use for anything published will be free.
  
-We will archive our data in UC's Merritt system, which will generate a DOI for our data package, which we will include in publication references.
+We will archive our data in UC's Merritt system, which will generate a DOI for our data packages and we will include in publication references.
 \vspace{-15pt}
 
 \subsubsection*{Protection}\vspace{-15pt}
-As noted, we will refrain from publicly posting proprietary or export controlled information--we will only post relevant data that are publishable. We will not generate personally identifiable information through this work. All of our work will be hosted with appropriate license information, as designated by our home institutions.
-
-Part three code and results that are subject to export control restrictions will be stored in an archive or appropriate repository for the laboratory (resource depends on , and restrictions will be put in place that enable those to be accessed only by appropriate research partners. 
+We do not anticipate generating proprietary, export controlled, or personally identifiable information. All of our work will be hosted with appropriate license information, as designated by our home institutions. We anticipate using the Creative Commons Attribution license for text documents (papers and data) and the MIT license for software and scripts.
 \vspace{-15pt}
  
 \subsubsection*{Rationale}\vspace{-15pt}
@@ -897,14 +893,9 @@ Our plan is intended to serve several goals:
 \end{enumerate}\vspace{-5pt}
 
 \subsubsection*{Software \& Codes}\vspace{-15pt}
-The Open Source License to be used, if applicable: we will use the Creative Commons Attribution license for text documents (papers and data) and the MIT license for software and scripts. If executable versions of the software will also be released, and if so what format will be used: most development work will be in Python, which does not require an executable. We will not be able to generally distribute the application-specific software we will modify. In those cases the host institutions will distribute accepted code modifications through their own software release processes.
+We aim to use the Open Source Licenses: Creative Commons Attribution license for text documents (papers and data) and MIT license for software and scripts. Most products will be Python, which do not require executables. However, we will distribute C++ source code and build instructions for Linux and Mac as applicable. We are unlikely to distribute the executables themselves or support Windows. 
 
-How software can be found and accessed and the length of time the software will be publicly available: as noted, we will link to repositories in our papers and that information will be available for as long as GitHub exists. If the data appears to be imperiled for some reason, we will move it and update the arXiv preprint with the new information. 
+How software can be found and accessed and the length of time the software will be publicly available: as noted, we will link to repositories in our papers and that information will be available for as long as GitHub exists. We will also store everything in the UC Merritt system. The associated DOIs will be contained in both our papers and the GitHub repository
 
-How any proprietary 3rd party software or libraries are used in the creation of this software: we will use third party Python libraries such as NumPy and SciPy. We may also modify application-specific software with our new methods. For nuclear engineering, we will likely modify neutron transport software associated with the MOOSE project at Idaho National Laboratory. For atmospheric transport, JPL will modify either internal codes. For image rendering, Zoox will modify their internal software. 
-<<<<<<< HEAD
- }
-=======
->>>>>>> 1c790ef64cae0b9ccce8ea1e189d9e5458756e13
- 
+How any proprietary 3rd party software or libraries are used in the creation of this software: we will only use open third party libraries. For Python libraries such as NumPy and SciPy; we will also use Eigen (open source), Field3D (open source), TBB (open source), OpenImageIO (open source), and Bazel (build system).  
 \end{document}
